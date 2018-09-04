@@ -4,3 +4,4 @@
 * Created README.yml file in GitHub
 * Created notebook.md file in Github
 * Reviewed Introduction lecture and slides ( in progress )
+* Progressing through Plagiarism tutorials. ( in progress )
