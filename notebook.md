@@ -11,3 +11,8 @@
 * Completed Plagiarism tutorials and attained certificate
 * Continued through lecture materials
 * Set up future systems account
+
+## Week of 09/14/2018 - 09/20/2018
+
+* Installed jabref application on laptop
+* Began reading 'Scientific Writing II'. 
