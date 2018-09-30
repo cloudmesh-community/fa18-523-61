@@ -16,3 +16,10 @@
 
 * Installed jabref application on laptop
 * Began reading 'Scientific Writing II'. 
+
+## Week of 09/21/2018 - 09/27/2018
+
+* Composed preliminary tech summaries for Cloudmesh and SQLite
+* Continued through lecture material
+* Began researching topics for final project
+
