@@ -23,3 +23,8 @@
 * Continued through lecture material
 * Began researching topics for final project
 
+## Week of 09/28/2018 - 10/4/2018
+
+* Began tech summary for DataFu
+* Continued through lecture material
+* Continued research towards final project.
