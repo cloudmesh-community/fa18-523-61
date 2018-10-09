@@ -28,3 +28,4 @@
 * Began tech summary for DataFu
 * Continued through lecture material
 * Continued research towards final project.
+* Created AWS account
