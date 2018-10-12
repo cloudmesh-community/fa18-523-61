@@ -1,5 +1,5 @@
 
-## Paper Proposal - Not Ready for Review
+## Natural Language Applications within Big Data
 
 ## Abstract
 
