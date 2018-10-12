@@ -1,4 +1,4 @@
-## Technology Project - Not Ready for Review
+## Technology Project
 
 ## Abstract
 
