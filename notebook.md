@@ -29,3 +29,11 @@
 * Continued through lecture material
 * Continued research towards final project.
 * Created AWS account
+
+## Week of 10/5/2018 - 10/11/2018
+
+* Completed preliminary Technology summaries for the first 4 technologies assigned ( Not checked in yet)
+* Worked on bibtex files for the technology summaries.
+* Wrote preliminary drafts of the paper and project assignments.
+* Created the appropriate folder and file locations for the paper and project.
+
