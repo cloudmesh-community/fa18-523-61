@@ -4,18 +4,15 @@ owner:
   lastname: "Stockwell"
   hid: "fa18-523-61"
   community: "i523"
-
-Technologies:
+technologies:
   - url: https://github.com/cloudmesh/technologies/blob/master/chapters/tech/datafu.md
   - url: https://github.com/cloudmesh/technologies/blob/master/chapters/tech/sqlite.md
   - url: https://github.com/cloudmesh/technologies/blob/master/chapters/tech/tyrant.md
   - url: https://github.com/cloudmesh/technologies/blob/master/chapters/tech/cloudmesh.md
-  
-  paper:
+paper:
   - keyword: NLP
     title: Natural Language Processing as related to Big Data
     url: https://github.com/cloudmesh-community/fa18-523-61/blob/master/paper/paper.md
-   
 project:
   - keyword: Text Mining
     title: TBD
