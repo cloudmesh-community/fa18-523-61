@@ -1,5 +1,5 @@
 
-## Natural Language Applications within Big Data - fa18-523-61
+## Natural Language Applications within Big Data - :smiley: fa18-523-61
 
 ## Abstract
 
