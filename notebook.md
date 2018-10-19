@@ -37,3 +37,12 @@
 * Wrote preliminary drafts of the paper and project assignments.
 * Created the appropriate folder and file locations for the paper and project.
 
+## Week of 10/12/2018 - 10/18/2018
+
+* Committed and checked in all 4 tech summaries. 
+* Fixed issues with broken quotes in SQlite tech summary.
+* Completed reference bib file for references used in tech summaries. 
+* Completed changes to read.yml file including URLS.
+* Completed preliminary early drafts of the paper and project. 
+
+
