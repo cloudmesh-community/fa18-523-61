@@ -45,4 +45,8 @@
 * Completed changes to read.yml file including URLS.
 * Completed preliminary early drafts of the paper and project. 
 
+## Week of 10/19/2018 - 10/26/2018
+
+* Minor changes to datafu and cloudmesh tech summaries
+* Updated fa18-523-61-references.bib file to fix issue with multiple authors.
 
