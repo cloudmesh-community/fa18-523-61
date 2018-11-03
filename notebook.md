@@ -50,3 +50,13 @@
 * Minor changes to datafu and cloudmesh tech summaries
 * Updated fa18-523-61-references.bib file to fix issue with multiple authors.
 
+## Week of 10/27/2018 - 11/1/2018
+
+* Made additional changes to fa18-523-61 reference.bib file to include new updates for wikipedia entries and 
+  websites. 
+* Updated and submitted requested changes for sglite and datafu tech summaries. 
+* Continue research on NLP paper and added new sections on NLP challenges. 
+* Met with Pulasthi during Thurs office hours to investigate and fix issues with github conflicts. 
+* Submitted request for more specific information to TA's regarding Cloudmesh and Tyrant summaries as the feedback was not sufficient. 
+
+
