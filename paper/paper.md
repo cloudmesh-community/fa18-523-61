@@ -1,10 +1,15 @@
-## Natural Language Applications and Challenges within Big Data - :smiley: fa18-523-61
+## Natural Language Applications and Challenges within Big Data :smiley: fa18-523-61
 
-:o: format incorrect
-
+---
+| Jay Stockwell
+| fa18-523-61
+| 
 | github: [:cloud:](https://github.com/cloudmesh-community/fa18-523-61/edit/master/paper/paper.md)
 
+---
+### Keywords : Natural Language Processing, Deep Learning, Syntaxnet, Part of Speech tagging
 
+---
 ## Abstract
 
    This paper examines Natural Language Processing (NLP), the current challenges facing NLP, and its usage within Big Data today.  Organizations have recently begun to harness the immense power of big data and how the concept can prove to be a beneficial component.  The term big data used to be a scary term that elicited feelings of consternation and anxiety, but with organizations experiencing exponential growth in data volume, the term has become mainstream and widely accepted.  Big data is largely unstructured text and constantly in a state of enormous growth, which is why NLP offers many opportunities to tap into this vast data resource [@www.expertsystem]. This paper will explore the evolving, and sometimes challenging relationship between NLP and Big Data, the problems that NLP can solve, which applications are leveraged, and how the data can be transformed into a presentable format for consumption. 
