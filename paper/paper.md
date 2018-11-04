@@ -1,14 +1,14 @@
-## Natural Language Applications and Challenges within Big Data :smiley: fa18-523-61
+# Natural Language Applications and Challenges within Big Data :smiley: fa18-523-61
 
 ---
 | Jay Stockwell
-| fa18-523-61
-| 
+| jaystock@iu.edu
+| Indiana University
+| hid: fa18-523-61
 | github: [:cloud:](https://github.com/cloudmesh-community/fa18-523-61/edit/master/paper/paper.md)
 
 ---
-### Keywords : Natural Language Processing, Deep Learning, Syntaxnet, Part of Speech tagging
-
+Keywords : Natural Language Processing, Deep Learning, Syntaxnet, Part of Speech tagging
 ---
 ## Abstract
 
