@@ -57,7 +57,9 @@ Deep learning algorithms can be trained against big data sets just like other st
 ## Natural Language Processing Solutions
 
 There are some solutions in place to the challenges facing NLP. With respect to the parsing problem, there is a relatively new concept designed by Google called SyntaxNet. SyntaxNet is based on the TensorFlow open source library readily available to users for designing deep learning models. With SyntaxNet, Google employed a normalized neural network model that provides an output of possible syntactical possibilities or hypotheses given a group of words [@Natural_Language_Speech]. SyntaxNet runs the model multiple times and discards hypotheses that are ranked lower and appear to be unlikely candidates. As far as parsing, SyntaxNet has developed a reputation for being the best parser, being known to sometimes exceed human accuracy, and recently made available in 40 languages.  [@Natural_Language_Processing]. 
+-- Add more information about SyntaxNet, machine learning and deep learning.
 
+## Conclusion
 
 
 
