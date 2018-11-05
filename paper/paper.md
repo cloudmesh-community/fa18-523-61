@@ -52,12 +52,17 @@ In recent years, with the precipitous rise of data science and the use of algori
 
 > "Deep learning (DL) has had a tremendous impact on natural language processing (NLP). After image and audio, probably this is the area   where DL has unleashed the most transformative forces. For example, almost all projects related to NLP at Stanford University, one of   the most respected institutions working on this area, involve DL research [@Natural_Language_Speech]."
 
-Deep learning algorithms can be trained against big data sets just like other standard algorithms and have proven to be effective in this manner. For example, "Trained on movie subtitles, language models are able to generate basic answers to questions about object colors or facts [@Natural_Language_Speech]."  
-
 ## Natural Language Processing Solutions
 
 There are some solutions in place to the challenges facing NLP. With respect to the parsing problem, there is a relatively new concept designed by Google called SyntaxNet. SyntaxNet is based on the TensorFlow open source library readily available to users for designing deep learning models. With SyntaxNet, Google employed a normalized neural network model that provides an output of possible syntactical possibilities or hypotheses given a group of words [@Natural_Language_Speech]. SyntaxNet runs the model multiple times and discards hypotheses that are ranked lower and appear to be unlikely candidates. As far as parsing, SyntaxNet has developed a reputation for being the best parser, being known to sometimes exceed human accuracy, and recently made available in 40 languages.  [@Natural_Language_Processing]. 
+
+THe latest version of SyntaxNet can be trained against a separate data set, and individuals have a good deal of freedom in tweaking the parameters of the model to better fit the particular nuances of their datasets. SyntaxNet includes a model built specifically for the English language entitled Parsy McParseface and acn be used to analyze English texts right out the box [@ai-googleblog.com].
+
+Members of the Stanford University's Natural Language Processing Group has developed a part of speech tagger that works remarkably well. The software. The application runs on Java and is somewhat memory intensive, requiring upwards of 60-200 Mb of memory to function efficiently, with around 1 Gb recommended in order to train a dataset [@www-stanford-nlpgroup].
+
 -- Add more information about SyntaxNet, machine learning and deep learning.
+
+Deep learning algorithms can be trained against big data sets just like other standard algorithms and have proven to be effective in this manner. For example, "Trained on movie subtitles, language models are able to generate basic answers to questions about object colors or facts [@Natural_Language_Speech]."
 
 ## Conclusion
 
