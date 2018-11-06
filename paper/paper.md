@@ -58,11 +58,13 @@ There are some solutions in place to the challenges facing NLP. With respect to 
 
 THe latest version of SyntaxNet can be trained against a separate data set, and individuals have a good deal of freedom in tweaking the parameters of the model to better fit the particular nuances of their datasets. SyntaxNet includes a model built specifically for the English language entitled Parsy McParseface and acn be used to analyze English texts right out the box [@ai-googleblog.com].
 
-Members of the Stanford University's Natural Language Processing Group has developed a part of speech tagger that works remarkably well. The software. The application runs on Java and is somewhat memory intensive, requiring upwards of 60-200 Mb of memory to function efficiently, with around 1 Gb recommended in order to train a dataset [@www-stanford-nlpgroup].
+Members of the Stanford University's Natural Language Processing Group has developed a part of speech tagger that works remarkably well. The application runs on Java and is somewhat memory intensive, requiring upwards of 60-200 Mb of memory to function efficiently, with around 1 Gb recommended in order to train a dataset [@www-stanford-nlpgroup]. ( information here about Bidirectional Network..)The latest download contains three distinct tagger models for the English Language as well as an Arabic, German, Chinese, and French model. These models can be retrained on any language. During an experiment against Penn Treebank WSJ data, the Stanford POS tagger returned an impressive per-position tag accuracy of 97.24% [@www-stanford-csd]. 
 
 -- Add more information about SyntaxNet, machine learning and deep learning.
 
 Deep learning algorithms can be trained against big data sets just like other standard algorithms and have proven to be effective in this manner. For example, "Trained on movie subtitles, language models are able to generate basic answers to questions about object colors or facts [@Natural_Language_Speech]."
+
+-- Add additional information on other algorithms and their relation to big data and Nlp
 
 ## Conclusion
 
