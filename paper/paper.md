@@ -6,6 +6,10 @@
 | hid: fa18-523-61
 | github: [:cloud:](https://github.com/cloudmesh-community/fa18-523-61/edit/master/paper/paper.md)
 
+
+* :o: this is a draft, review has not been started due to this
+
+
 ---
 Keywords : Natural Language Processing, Deep Learning, SyntaxNet, Part of Speech tagging
 ---
@@ -14,7 +18,7 @@ Keywords : Natural Language Processing, Deep Learning, SyntaxNet, Part of Speech
 
 This paper examines Natural Language Processing (NLP), the current challenges facing NLP, and its usage within Big Data today.  Organizations have recently begun to harness the immense power of big data and how the concept can prove to be a beneficial component.  The term big data used to be a scary term that elicited feelings of consternation and anxiety, but with organizations experiencing exponential growth in data volume, the term has become mainstream and widely accepted.  Big data is largely unstructured text and constantly in a state of enormous growth, which is why NLP offers many opportunities to tap into this vast data resource [@www.expertsystem]. This paper will explore the evolving, and sometimes challenging relationship between NLP and Big Data, the problems that NLP can solve, which applications are leveraged, and how the data can be transformed into a presentable format for consumption. 
 
-## Introduction:
+## Introduction
 
 Big data “describes the growing volume of structured and unstructured, multi-source information that is too large for traditional applications to handle [@www.expertsystem].”  The volume of today’s data is on an unprecedented growth trajectory due to the ample methods to collect and analyze data. The Internet of Things, mobile devices, sensors, cameras, and software logs are just some examples of non-traditional methods of data collection are contribute to the abundance of information today [@en.wikipedia]. There’s no end in sight to exponential growth that is projected over the next several years. According to Wikipedia: 
 
