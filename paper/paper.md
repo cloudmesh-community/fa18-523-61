@@ -1,4 +1,4 @@
-# Natural Language Applications and Challenges within Big Data :smiley: fa18-523-61
+# Natural Language Applications and Challenges within Big Data :hand: fa18-523-61
 
 | Jay Stockwell
 | jaystock@iu.edu
@@ -60,7 +60,7 @@ In recent years, with the precipitous rise of data science and the use of algori
 
 There are some solutions in place to the challenges facing NLP. With respect to the parsing problem, there is a relatively new concept designed by Google called SyntaxNet. SyntaxNet is based on the TensorFlow open source library readily available to users for designing deep learning models. With SyntaxNet, Google employed a normalized neural network model that provides an output of possible syntactical possibilities or hypotheses given a group of words [@Natural_Language_Speech]. SyntaxNet runs the model multiple times and discards hypotheses that are ranked lower and appear to be unlikely candidates. As far as parsing, SyntaxNet has developed a reputation for being the best parser, being known to sometimes exceed human accuracy, and recently made available in 40 languages.  [@Natural_Language_Processing]. 
 
-THe latest version of SyntaxNet can be trained against a separate data set, and individuals have a good deal of freedom in tweaking the parameters of the model to better fit the particular nuances of their datasets. SyntaxNet includes a model built specifically for the English language entitled Parsy McParseface and acn be used to analyze English texts right out the box [@ai-googleblog.com].
+The latest version of SyntaxNet can be trained against a separate data set, and individuals have a good deal of freedom in tweaking the parameters of the model to better fit the particular nuances of their datasets. SyntaxNet includes a model built specifically for the English language entitled Parsy McParseface and acn be used to analyze English texts right out the box [@ai-googleblog.com].
 
 Members of the Stanford University's Natural Language Processing Group has developed a part of speech tagger that works remarkably well. The application runs on Java and is somewhat memory intensive, requiring upwards of 60-200 Mb of memory to function efficiently, with around 1 Gb recommended in order to train a dataset [@www-stanford-nlpgroup]. ( information here about Bidirectional Network..)The latest download contains three distinct tagger models for the English Language as well as an Arabic, German, Chinese, and French model. These models can be retrained on any language. During an experiment against Penn Treebank WSJ data, the Stanford POS tagger returned an impressive per-position tag accuracy of 97.24% [@www-stanford-csd]. 
 
@@ -72,7 +72,7 @@ Deep learning algorithms can be trained against big data sets just like other st
 
 ## Conclusion
 
-
+In conclusion, the NLP field has proven its importance in the data world by allowing for entities to analyze and evaluate many aspects of the components of language. The challenges that have arisen from leveraging NLP such as parsing and part of speech tagging have beem met with the development of new applications such as Google's SyntaxNet and Stanford's Part of Speech tagger.  Since NLP is still in it's early stages, there will continue to be new challenges, and just like SyntaxNet, new applications will meet these challenges and make NLP even more effective. These applications leverage algorithms such as neural networks and deep learning to facilitate the effective training of datasets. Today's organizations deal with, and store enormous amounts of textual data from many different sources. Because this information is comprised of primarily language, organizations that leverage big data and work with this type of data are starting to understand the implications that NLP provides in evaluating their growing stores of data to detect patterns, connections and trends within their various data sources [@www-expertsystems-nlp].
 
 
 
