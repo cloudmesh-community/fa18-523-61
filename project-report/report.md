@@ -1,10 +1,16 @@
-# Technology Project - :hand: fa18-523-61
+# Twitter Text Mining using Python. MongoDB, and Amazon Web Services  - :hand: fa18-523-61
 
+-- working title, not finalized yet..
+
+| Jay Stockwell
+| jaystock@iu.edu
+| Indiana University
+| hid: fa18-523-61
 | github: [:cloud:](https://github.com/cloudmesh-community/fa18-523-61/blob/master/project-report/report.md)
 
-:o: wrong title
-
-
+---
+Keywords: Twitter, Text Mining, Python, MongoDB, Amazon Web Services
+---
 
 ## Abstract
 
