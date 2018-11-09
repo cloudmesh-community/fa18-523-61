@@ -59,4 +59,11 @@
 * Met with Pulasthi during Thurs office hours to investigate and fix issues with github conflicts. 
 * Submitted request for more specific information to TA's regarding Cloudmesh and Tyrant summaries as the feedback was not sufficient. 
 
+## Week of 11/2/2018 - 11/8/2018
 
+* Completed final requested changes provided by TA's to all tech summaries and bibtex files.
+* Added new material to technology paper, primarily regarding NLP challenges, Google SyntaxNet, and Stanford POS Tagger. 
+** test
+* Also added sections to paper pertaining to Deep Learning.
+* Updated format for both technology paper and project paper. 
+* Worked on python code for project. ( will be checking into github this weekend.)
