@@ -60,15 +60,19 @@ The latest version of SyntaxNet can be trained against a separate data set, and 
 
 Members of the Stanford University's Natural Language Processing Group has developed a part of speech tagger that works remarkably well. The application runs on Java and is somewhat memory intensive, requiring upwards of 60-200 Mb of memory to function efficiently, with around 1 Gb recommended in order to train a dataset [@www-stanford-nlpgroup]. ( information here about Bidirectional Network..)The latest download contains three distinct tagger models for the English Language as well as an Arabic, German, Chinese, and French model. These models can be retrained on any language. During an experiment against Penn Treebank WSJ data, the Stanford POS tagger returned an impressive per-position tag accuracy of 97.24% [@www-stanford-csd]. 
 
-As NLU continues to become more mainstream, many companies are embedding the NLU algorithms within their products to further enhance their overall NLP capabilities. Some of the companies and their associated applications are Apple (Siri), Google(GoogleNow, Google Search), Microsoft(Cortana), and IBM (Watson, DeepQA) [@www-info-contactsolutions].  
-
--- Add more information about SyntaxNet, machine learning and deep learning.
+As NLU continues to become more mainstream, many companies are embedding proprietary NLU algorithms within their products to further enhance their overall NLP capabilities. Some of the companies and their associated applications are Apple (Siri), Google(GoogleNow, Google Search), Microsoft(Cortana), and IBM (Watson, DeepQA) [@www-info-contactsolutions]. These products are just the beginning of a new wave of technology that will surely influence how organizations incorporate NLP into their business processes.  
 
 In recent years, with the precipitous rise of data science and the use of algorithms for predictive analysis among other areas, one concept in particular, Deep Learning, has emerged as a possible solution to answering some of the aforementioned challenges facing NLP. 
 
 > "Deep learning (DL) has had a tremendous impact on natural language processing (NLP). After image and audio, probably this is the area   where DL has unleashed the most transformative forces. For example, almost all projects related to NLP at Stanford University, one of   the most respected institutions working on this area, involve DL research [@Natural_Language_Speech]."
 
-Deep learning algorithms can be trained against big data sets just like other standard algorithms and have proven to be effective in this manner. For example, "Trained on movie subtitles, language models are able to generate basic answers to questions about object colors or facts [@Natural_Language_Speech]."
+Deep learning algorithms can be trained against big data sets just like other standard algorithms and have proven to be effective in this manner. For example, "Trained on movie subtitles, language models are able to generate basic answers to questions about object colors or facts [@Natural_Language_Speech].
+
+In order for NLP to succeed, it needs to be trained against very large datasets or corpuses. A corpus is a collection of written texts used for research or investigation purposes. Two examples of widely used corpuses are: 
+
+> "The Google n-gram corpus, a trillion word database containing phrases (up to 5 words long) occurring on public Web pages. The USENET   corpus, a 25 billion word (compressed) corpus containing public USENET postings on 47,680 English language, non-binary-file newsgroups   between Oct 2005 and Jan 2010 [@www-cloudera-blog]."
+
+Some organizationst leverage Hadoop, an open source processing framework that works extremely well against very large textual datasets that require enormous amounts of computational power. Hadoop can also act as a data management application providing massive storage space and can handle numerous concurrent processing tasks. Hadoop's ability to work with various kinds of structured and unstructured data make it an ideal application for NLP, as it can handle an exorbitant amount of data from sources such as internet clickstream records, web server application logs, social media sites such as facebook and twitter, customer emails, and sensor information from the internet of things [@www-searchmdatamanagement-hadoop].  The aforementioned deep learning algoritms can be set up to run in a Hadoop environment to leverage its extraordinary size and computational power.
 
 -- Add additional information on other algorithms and their relation to big data and Nlp
 
