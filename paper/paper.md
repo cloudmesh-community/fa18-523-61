@@ -26,9 +26,9 @@ Big data “describes the growing volume of structured and unstructured, multi-s
     
 Natural Language Processing is a relatively new concept and is gaining momentum in the use of text analysis and presentation.  Elizabeth Liddy from Syracuse University provides a great definition:
 
-> "Natural Language Processing is a theoretically motivated range of computational techniques for analyzing and representing naturally     occurring texts at one or more levels of linguistic analysis for the purpose of achieving human-like language processing for a range     of tasks or applications" [@www-surface.syr.edu].
+> "Natural Language Processing is a theoretically motivated range of computational techniques for analyzing and representing naturally     occurring texts at one or more levels of linguistic analysis for the purpose of achieving human-like language processing for a range     of tasks or applications" [@www-surface-syr-edu].
 
-Essentially NLP’s goal is to achieve a level of text analysis and processing that mimicks very closely the way that humans process language.  While NLP has truly made significant progress over the last several years, the challenge of deciphering the exact context and inference of text is still an area of which NLP is still improving [@www-surface.syr.edu].
+Essentially NLP’s goal is to achieve a level of text analysis and processing that mimicks very closely the way that humans process language.  While NLP has truly made significant progress over the last several years, the challenge of deciphering the exact context and inference of text is still an area of which NLP is still improving [@www-surface-syr-edu].
 
 ## Natural Language Challenges
 
@@ -36,7 +36,7 @@ As previously mentioned, there are many challenges that face NLP today. Some of 
 
 Parsing, the ability to deconstruct a sentence into its parts, is a major challenge facing NLP. Parsing can lead to ambiguity because it can be difficult to detect the correct syntax, and/or the exact interpretation of each word. Prepositions within a sentence can cause confusion because it can be hard to determine which word is being modified. as explained by Armando Viera and Bernadete Ribeiro:
 
-> "..the sentence "Alice drove down the street in her car" has at least two possible dependency parses. The first corresponds to the       (correct) interpretation where Alice is driving in her car; the second corresponds to the (absurd but possible) interpretation where     the street is located in her car. The ambiguity arises because the preposition in can modify either drove or street.                     [@Natural_Language_Speech]."
+> "..the sentence "Alice drove down the street in her car" has at least two possible dependency parses. The first corresponds to the       (correct) interpretation where Alice is driving in her car; the second corresponds to the (absurd but possible) interpretation where     the street is located in her car. The ambiguity arises because the preposition in can modify either drove or street.                     [@Natural-Language-Speech]."
 
 Part of Speech tagging is another NLP concern. Part of speech tagging is the process of assigning a part of speech definition to a word within a sentence.[@www-language-worldofcomputing]. Common parts of speech include nouns, verbs, adjectives, and adverbs. Challenges can arise due to the lack of context. There are many words that have multiple meanings, which can lead to ambiguity when computers try to assign a descriptor. For example, the word chair can have multiple meanings; you can chair(verb) or lead a meeting, or you can sit in a chair (noun) [@www-language-worldofcomputing]. 
 
@@ -54,7 +54,7 @@ In order to NLU to properly function, machines must be programmed to understand 
 
 ## Natural Language Processing Solutions
 
-There are some solutions in place to address the challenges facing NLP. With respect to the parsing problem, there is a relatively new concept designed by Google called SyntaxNet. SyntaxNet is based on the TensorFlow open source library readily available to users for designing deep learning models. With SyntaxNet, Google employed a normalized neural network model that provides an output of possible syntactical possibilities or hypotheses given a group of words [@Natural_Language_Speech]. SyntaxNet runs the model multiple times and discards hypotheses that are ranked lower and appear to be unlikely candidates. As far as parsing, SyntaxNet has developed a reputation for being the best parser, being known to sometimes exceed human accuracy, and recently made available in 40 languages.  [@Natural_Language_Processing]. 
+There are some solutions in place to address the challenges facing NLP. With respect to the parsing problem, there is a relatively new concept designed by Google called SyntaxNet. SyntaxNet is based on the TensorFlow open source library readily available to users for designing deep learning models. With SyntaxNet, Google employed a normalized neural network model that provides an output of possible syntactical possibilities or hypotheses given a group of words [@Natural-Language-Speech]. SyntaxNet runs the model multiple times and discards hypotheses that are ranked lower and appear to be unlikely candidates. As far as parsing, SyntaxNet has developed a reputation for being the best parser, being known to sometimes exceed human accuracy, and recently made available in 40 languages.  [@Natural-Language-Speech]. 
 
 The latest version of SyntaxNet can be trained against a separate data set, and individuals have a good deal of freedom in tweaking the parameters of the model to better fit the particular nuances of their datasets. SyntaxNet includes a model built specifically for the English language entitled Parsy McParseface and acn be used to analyze English texts right out the box [@ai-googleblog.com].
 
