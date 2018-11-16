@@ -67,3 +67,11 @@
 * Also added sections to paper pertaining to Deep Learning.
 * Updated format for both technology paper and project paper. 
 * Worked on python code for project. ( will be checking into github this weekend.)
+
+## Week of 11/9/2018 - 11/15/2018
+
+* Added final material and conclusion to paper
+* Updated paper bibtex file
+* Researched effective methods of using AWS and Python
+* Researched effective methods of using MongoDB and twitter data. 
+* Continued work on Python file. 
