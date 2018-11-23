@@ -75,3 +75,10 @@
 * Researched effective methods of using AWS and Python
 * Researched effective methods of using MongoDB and twitter data. 
 * Continued work on Python file. 
+
+## Week of 11/16/2018 - 11/22/2018
+
+** Continued work on Python code. Working to connect to MongoDB database.
+** Create MongoDB Atlas account and stood up VM cluster
+** Added new material to project paper, primarily around implementation section.
+
