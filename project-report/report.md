@@ -38,7 +38,56 @@ The tweepy program in Python can only collect 100 tweets at a time, so the scrip
 
 ## Data 
 
-For this project, I created a Twitter API account and used Python to connect to Twitter directly using a set of credentials that were supplied to me. Using a python script, I created two sets of data; one for tweets that contained the hashtag #dog and a second dataset that contained tweets with the hashtag #cat. After the data is pulled, the json data is converted into dataframes using the pandas package. I intend to store the data within a MongoDB Atlas Cluster run using the AWS platform, for which I’ve created an account. I would also like to provide appropriate visualizations using the Python Matplotlib library.    
+For this term paper, I created a Twitter API account and used Python to connect to Twitter directly using a set of credentials that were supplied to me. Using a python script, I created two sets of data; one for tweets that contained the hashtag #dog and a second dataset that contained tweets with the hashtag #c .at. After the data is pulled, the json data is converted into dataframes using the pandas package. 
+
+Twitter data, when extracted, is in JSON format. JSON (Javascript Object Notation) is a data interchange format that is both easy for humans to read and write, and easy for machines to parse and implement [@www-json-org]. A json object is basically a set of key value pairs ending contained within two braces. 
+
+-- add JSON object image here 
+
+A json array is essentially a collection of key values contained within two brackets
+
+-- add JSON array image here
+
+Twitter JSON data is comprised of many different components, all of which are used to describe individual tweets. 
+
+>> "At Twitter we serve many objects as JSON, including Tweets and Users. These objects all encapsulate core attributes that describe      the object. Each Tweet has an author, a message, a unique ID, a timestamp of when it was posted, and sometimes geo metadata shared by    the user. Each User has a Twitter name, an ID, a number of followers, and most often an account bio [@www-developer-twitter]".
+
+Below is an example of a tweet and a description of the content:
+
+{
+  "created_at": "Thu Apr 06 15:24:15 +0000 2017",
+  "id_str": "850006245121695744",
+  "text": "1\/ Today we\u2019re sharing our vision for the future of the Twitter API platform!\nhttps:\/\/t.co\/XweGngmxlP",
+  "user": {
+    "id": 2244994945,
+    "name": "Twitter Dev",
+    "screen_name": "TwitterDev",
+    "location": "Internet",
+    "url": "https:\/\/dev.twitter.com\/",
+    "description": "Your official source for Twitter Platform news, updates & events. Need technical help? Visit https:\/\/twittercommunity.com\/ \u2328\ufe0f #TapIntoTwitter"
+  },
+  "place": {   
+  },
+  "entities": {
+    "hashtags": [      
+    ],
+    "urls": [
+      {
+        "url": "https:\/\/t.co\/XweGngmxlP",
+        "unwound": {
+          "url": "https:\/\/cards.twitter.com\/cards\/18ce53wgo4h\/3xo1c",
+          "title": "Building the Future of the Twitter API Platform"
+        }
+      }
+    ],
+    "user_mentions": [     
+    ]
+  }
+}
+
+The tweets follow a parent-child construction. All tweets contain a user object which can also contain a geo-tagged child object describing the geographic location of where the tweet originated. The tweet also contains an entities object that consists of information such as assigned hashtags, URLs, user mentions, and any sort of media material [@www-developer-twitter]. 
+
+I intend to store the data within a MongoDB Atlas Cluster run using the AWS platform, for which I’ve created an account. I would also like to provide appropriate visualizations using the Python Matplotlib library.    
 
 ## Results
 
