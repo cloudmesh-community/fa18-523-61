@@ -6,7 +6,6 @@
 | hid: fa18-523-61
 | github: [:cloud:](https://github.com/cloudmesh-community/fa18-523-61/edit/master/paper/paper.md)
 
-:o: refernces missing
 
 ---
 
@@ -49,9 +48,7 @@ Another challenge is Natural Language Understanding (NLU). NLU pertains to the a
 With the rise of Artificial Intelligence (AI), NLU has risen in complexity due to the extraordinary level of computations involved.   
 The concept is considered one of the most challenging problems in the AI world. These types of problems require intense computational effort and also require human intervention and resources as they cannot be solved by machines alone. Challenging AI problems are known as AI-Hard or AI-complete.
 
-> "In the field of artificial intelligence, the most difficult problems are informally known as AI-complete or AI-hard, implying that     the difficulty of these computational problems is equivalent to that of solving the central artificial intelligence problem—making       computers as intelligent as people, or strong AI.[1] To call a problem AI-complete reflects an attitude that it would not be solved by   a simple specific algorithm [@www-en-wikipedia-aihard]." 
-
-:o: illegal refernces in citation, they must be also includes in your bibtex and cited obviously, how shoudl we know what [1] means
+> "In the field of artificial intelligence, the most difficult problems are informally known as AI-complete or AI-hard, implying that     the difficulty of these computational problems is equivalent to that of solving the central artificial intelligence problem—making       computers as intelligent as people, or strong AI [@www-csu-buffalo-ai]. To call a problem AI-complete reflects an attitude that it       would not be solved by   a simple specific algorithm [@www-en-wikipedia-aihard]." 
 
 In order to NLU to properly function, machines must be programmed to understand text. NLU must follow all the text translation rules that any human would follow if they were reading through any type or text document. Machines must have the ability to mimick human abilities and human intellectual skills such as reason, common sense, and intuition that relate to how humans perceive language and social intelligence concepts [@www-en-wikipedia-aihard]. NLU requires an enormous amount of work in order to prove effective. NLU applications require extensive data gathering and subject matter investigation and research in order to properly train the system to perform [@www-info-contactsolutions].
 
