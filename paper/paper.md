@@ -51,6 +51,8 @@ The concept is considered one of the most challenging problems in the AI world. 
 
 > "In the field of artificial intelligence, the most difficult problems are informally known as AI-complete or AI-hard, implying that     the difficulty of these computational problems is equivalent to that of solving the central artificial intelligence problem—making       computers as intelligent as people, or strong AI.[1] To call a problem AI-complete reflects an attitude that it would not be solved by   a simple specific algorithm [@www-en-wikipedia-aihard]." 
 
+:o: illegal refernces in citation, they must be also includes in your bibtex and cited obviously, how shoudl we know what [1] means
+
 In order to NLU to properly function, machines must be programmed to understand text. NLU must follow all the text translation rules that any human would follow if they were reading through any type or text document. Machines must have the ability to mimick human abilities and human intellectual skills such as reason, common sense, and intuition that relate to how humans perceive language and social intelligence concepts [@www-en-wikipedia-aihard]. NLU requires an enormous amount of work in order to prove effective. NLU applications require extensive data gathering and subject matter investigation and research in order to properly train the system to perform [@www-info-contactsolutions].
 
 ## Natural Language Processing Solutions
