@@ -14,9 +14,7 @@ Keywords: Twitter, Text Mining, Python, MongoDB, Amazon Web Services
 
 ## Abstract
 
-This project will provide a thorough analysis, and detailed, informative document pertaining to text mining using the Twitter API and Python. The project objectives consists of applying text mining and Natural Language Processing (NLP) techniques and processes to a dataset that was pulled from the social media site Twitter. 
-
-## Architecture
+This term paper will provide a thorough analysis, and detailed, informative document pertaining how the Twitter API, in conjunction with Python and MongoDB Atlas can provide an effective solution for collecting and analyzing tweets. The paper's objectives are to provide a thorough understanding pertaining to how the twitter API works, how twitter data is constructed, how Python's tweepy library works to collect data, and how MongoDB Atlas cloud service provides a robust environment to store twitter data for future analysis. The paper will also discuss the implications of using the Twitter app and its data within the realm of Big Data and Natural Language Processing. 
 
 
 ## Introduction
@@ -25,11 +23,20 @@ Twitter allows individuals and organizations to post short messages called tweet
 
 ## Implementation
 
+Twitter provides a dedicated API platform for developers to allow for the development of custom applications to collect and use
+tweets. This API can be used for both personal and business purposes. Users can tap into the vast social network to for numerous reasons such as collecting specific tweets and placing in a datastore, integrating tweets from twitter within your own website or application, monitor your own twitter accounts to see how individuals are engaging [@www-developer-twitter]. Twitter provides serveral different API's for individuals to use based on their final goals of how they intend to leverage the data. For most basic needs, the standard API will work. However, twitter offers an Enterprise API for organizations that depend on Twitter for their day-today business. 
+
+In order to gain access to Twitter data through the API, users are required to create a Twitter account. The signup process requires users to provide basic user information, as well information about your purpose and intent of your objectives with Twitter. Upon completing the sign up process, Twitter reviews your information and then assigns 4 keys that will be required for authentication between your application and Twitter. These 4 keys consist of consumer tokens and secrets that provide application authentication, and access tokens and secrets that provide the actual user or account authentication [@www-developer-twitter-basics]. 
+
+
+
+Tweepy currently supports oauth authentication and authentication is handled via the tweepy.AuthHandler class in python [@www-tweepy-io]. Oauth authentication is considered the standard method for token authentication by 3rd-party applications such as Facebook and Twitter. Oauth works on behalf of the end user to provide a token which authorizes specific information to be shared between applications [@www-searchmicroservices].
+
 The requirements for this project are to run a python script to collect twitter data, specifically tweets with the hashtags #cats and #dogs. Next, is to store the twitter data within a MongoDB database using my local computer and also in the cloud using MongoDB. In order to pull twitter data, users must create a Twitter API account through the Twitter developers website. After creating an account, users wil be provided with four distinct security tokens that users will need in order to connect to the Twitter API through Python. 
 
-Next, I imstalled the latest version of Python, which is version 3.7.1. Python is an open source general purpose programming language that is very useful for data science projects. There are numerous libraries available to install within Python that will help you accomplish your end goal. For this project, the primary library that I want to use for collecting twitter data is tweepy. Tweepy is designed to handle multiple aspects of twitter tweet collection including authentication, connection, session management, and reading and routing incoming messages [@www-tweepy-io]. 
+Next, I installed the latest version of Python, which is version 3.7.1. Python is an open source general purpose programming language that is very useful for data science projects. There are numerous libraries available to install within Python that will help you accomplish your end goal. For this project, the primary library that I want to use for collecting twitter data is tweepy. Tweepy is designed to handle multiple aspects of twitter tweet collection including authentication, connection, session management, and reading and routing incoming messages [@www-tweepy-io]. 
 
-As mentioned earlier, Twitter requires authentication to the API by using 4 keys or tokens. Tweepy currently supports oauth authentication and authentication is handled via the tweepy.AuthHandler class in python [@www-tweepy-io]. Oauth authentication is considered the standard method for token authentication by 3rd-party applications such as Facebook and Twitter. Oauth works on behalf of the end user to provide a token which authorizes specific information to be shared between applications [@www-searchmicroservices].
+
 
 Once tweepy is set up and the user passes through the authentication step, users can now run begin to collect tweets. Tweepy collects tweets in real-time, so the script will be collecting tweets that were released just prior, or during the implementation of the script.  
 The tweepy program in Python can only collect 100 tweets at a time, so the script contains a function to run in a loop to collect a set number of tweets as defined by a 'MaxTweets' parameter. Once that parameter value is met, the function terminates. 
