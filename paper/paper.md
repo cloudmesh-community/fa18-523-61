@@ -42,11 +42,6 @@ Part of Speech tagging is another NLP concern. Part of speech tagging is the pro
 
 Another challenge is Natural Language Understanding (NLU). NLU pertains to the ability of a computer to comprehend the sentence structure and intended meaning of human languages, which in turn allows humans to fully communicate and interact with machines using real sentences [@www-gartner-nlu]. This concept is gained interest in recent years due to the many possible ways this can be leveraged within applications on a commercial scale.  
 
-> "There is considerable commercial interest in the field because of its application to question answering,[3] 
-  news-gathering, text categorization, voice-activation, archiving, and large-scale content analysis [@www-en-wikipedia-nlu]."
-  
-:o: illegal citation
-
 With the rise of Artificial Intelligence (AI), NLU has risen in complexity due to the extraordinary level of computations involved.   
 The concept is considered one of the most challenging problems in the AI world. These types of problems require intense computational effort and also require human intervention and resources as they cannot be solved by machines alone. Challenging AI problems are known as AI-Hard or AI-complete.
 
