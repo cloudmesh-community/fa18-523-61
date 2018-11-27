@@ -21,7 +21,7 @@ This term paper will provide a thorough analysis, and detailed, informative docu
   
 Twitter allows individuals and organizations to post short messages called tweets. Individuals can follow other sites within Twitter to receive their tweets and to stay informed in subjects that appeal to them. Twitter is also thought of as an instant messaging and micro-blogging application that allows users to communicate their opinions and thoughts in a completely open and uninhibited manner. One major component of Twitter is the hashtag. Users can append a hashtag ‘#’ in front of a word or phrase within their tweet in order to categorize them so other users can find and contribute to your tweet [@www.tech-faq]. The hashtag can quickly draw attention to, and promote your tweet very effectively. The implications of how the data on Twitter can be used are simply astounding. In particular, Twitter is used by businesses to find new customers, market new products, find marketplace trends, and many other uses. Data Scientists can mine the data on Twitter and discover new insights and uses of the data through the applications of machine learning algorithms. I will be examining through the use of the Twitter API, how to mine for tweets that contain the hashtags #dog, #cat, or both. We will then clean up the data and apply two different machine learning classification algorithms to ascertain just how effective it is to classify tweets into specific categories. This type of analysis can have far-reaching implications as aforementioned previously, and specifically with this exercise we can try to answer the question if a person is a dog person, a cat person, or both based solely on the information in their tweets. 
 
-## Implementation
+## Twitter API and Python Implementation
 
 Twitter provides a dedicated API platform for developers to allow for the development of custom applications to collect and use
 tweets. This API can be used for both personal and business purposes. Users can tap into the vast social network to for numerous reasons such as collecting specific tweets and placing in a datastore, integrating tweets from twitter within your own website or application, monitor your own twitter accounts to see how individuals are engaging [@www-developer-twitter]. Twitter provides serveral different API's for individuals to use based on their final goals of how they intend to leverage the data. For most basic needs, the standard API will work. However, twitter offers an Enterprise API for organizations that depend on Twitter for their day-today business. 
@@ -34,27 +34,30 @@ As Python has gained momentum with the Data Science field, another field in whic
 
 > "Python consists of Pydoop package which helps in accessing HDFS API and also writing Hadoop MapReduce programming. Besides that         Pydoop enables MapReduce programming to solve complex big data problems with minimal effort [@www-whizlabs-com]".
 
-Python is also very scaleable within this environment. Another great component is that Python has a very large, robust user community that users can reach out to for guidance on all sorts of coding related topics. Due to the popularity of the language, experienced users are extremely willing to participate in the community to facilitate its growth and continued usage with the programming world.  
+Python is also very scaleable within this environment. Another great component is that Python has a very large, robust user community that users can reach out to for guidance on all sorts of coding related topics. Due to the popularity of the language, experienced users are extremely willing to participate in the community to facilitate its growth and continued usage within the programming world.  
 
 Python can be leveraged using a basic shell program, which can accomplish basic tasks, or with an interpreter or IDE (Integrated Developer Environments). An IDE is a dedicated program, integrated with several tools such as debuggers, build and execution tools, syntax highlighting, and source control tools, that are specifically used to writing software code [@www-realpython-com]. Some examples pf well known Python specific IDE programs are PyCharm, Spyder, and Thonny. When tasked with developing more sophisticated Python code for data science purposes, it is a good practice to use a dedicated code editor well suited to the task.  
 
-In regards to working with Twitter, there is a library entitled Tweepy that can be installed 
+In regards to working with Twitter, there is a Python library entitled Tweepy that can be installed along with any other required libraries and toolkits. Users will need to use the pip command at a terminal screen in order to install tweepy. PIP is a package management system used by Python to install and manage larger software packages [@www-en-wikipedia-pip]. Below is the installation code:
 
-Tweepy currently supports oauth authentication and authentication is handled via the tweepy.AuthHandler class in python [@www-tweepy-io]. Oauth authentication is considered the standard method for token authentication by 3rd-party applications such as Facebook and Twitter. Oauth works on behalf of the end user to provide a token which authorizes specific information to be shared between applications [@www-searchmicroservices]. Some examples pf well known Python specific IDE programs are PyCharm, Spyder, and Thonny. 
+-- insert installation snippet
 
+After installation is complete, users will need to use the import function to fully load the tweepy program into the python script that's in development.
+
+-- insert import screenshot
+
+The next step is authentication between the Twitter API and python. As mentioned earlier, there are 4 required keys needed for this step for which Tweepy is responsible for completing. Tweepy currently supports oauth authentication and authentication is handled via the tweepy AuthHandler class in python [@www-tweepy-io]. Oauth authentication is considered the standard method for token authentication by 3rd-party applications such as Facebook and Twitter. Oauth works on behalf of the end user to provide a token which authorizes specific information to be shared between applications [@www-searchmicroservices].  There are four variables in the python code that will be used to hold the security information
+
+-- insert authentication piece
+
+Once tweepy is set up and the user passes through the authentication step, users can now begin further development on python code that can be implemented against Twitter data.. Tweepy collects tweets in real-time, so the script will be collecting tweets that were released just prior, or during the implementation of the script. The tweepy program in Python can only collect 100 tweets at a time, so the script can be built to contain a function which runs in an iterative loop to collect a set number of tweets as defined by a 'MaxTweets' parameter. Once that parameter value is met, the function terminates. 
 
 The requirements for this project are to run a python script to collect twitter data, specifically tweets with the hashtags #cats and #dogs. Next, is to store the twitter data within a MongoDB database using my local computer and also in the cloud using MongoDB. In order to pull twitter data, users must create a Twitter API account through the Twitter developers website. After creating an account, users wil be provided with four distinct security tokens that users will need in order to connect to the Twitter API through Python. 
 
 Next, I installed the latest version of Python, which is version 3.7.1. Python is an open source general purpose programming language that is very useful for data science projects. There are numerous libraries available to install within Python that will help you accomplish your end goal. For this project, the primary library that I want to use for collecting twitter data is tweepy. Tweepy is designed to handle multiple aspects of twitter tweet collection including authentication, connection, session management, and reading and routing incoming messages [@www-tweepy-io]. 
 
 
-
-Once tweepy is set up and the user passes through the authentication step, users can now run begin to collect tweets. Tweepy collects tweets in real-time, so the script will be collecting tweets that were released just prior, or during the implementation of the script.  
-The tweepy program in Python can only collect 100 tweets at a time, so the script contains a function to run in a loop to collect a set number of tweets as defined by a 'MaxTweets' parameter. Once that parameter value is met, the function terminates. 
-
-## Design
-
-## Data 
+## Data
 
 For this term paper, I created a Twitter API account and used Python to connect to Twitter directly using a set of credentials that were supplied to me. Using a python script, I created two sets of data; one for tweets that contained the hashtag #dog and a second dataset that contained tweets with the hashtag #c .at. After the data is pulled, the json data is converted into dataframes using the pandas package. 
 
@@ -72,40 +75,17 @@ Twitter JSON data is comprised of many different components, all of which are us
 
 Below is an example of a tweet and a description of the content:
 
-{
-  "created_at": "Thu Apr 06 15:24:15 +0000 2017",
-  "id_str": "850006245121695744",
-  "text": "1\/ Today we\u2019re sharing our vision for the future of the Twitter API platform!\nhttps:\/\/t.co\/XweGngmxlP",
-  "user": {
-    "id": 2244994945,
-    "name": "Twitter Dev",
-    "screen_name": "TwitterDev",
-    "location": "Internet",
-    "url": "https:\/\/dev.twitter.com\/",
-    "description": "Your official source for Twitter Platform news, updates & events. Need technical help? Visit https:\/\/twittercommunity.com\/ \u2328\ufe0f #TapIntoTwitter"
-  },
-  "place": {   
-  },
-  "entities": {
-    "hashtags": [      
-    ],
-    "urls": [
-      {
-        "url": "https:\/\/t.co\/XweGngmxlP",
-        "unwound": {
-          "url": "https:\/\/cards.twitter.com\/cards\/18ce53wgo4h\/3xo1c",
-          "title": "Building the Future of the Twitter API Platform"
-        }
-      }
-    ],
-    "user_mentions": [     
-    ]
-  }
-}
+-- insert image of sample json twitter record
 
-The tweets follow a parent-child construction. All tweets contain a user object which can also contain a geo-tagged child object describing the geographic location of where the tweet originated. The tweet also contains an entities object that consists of information such as assigned hashtags, URLs, user mentions, and any sort of media material [@www-developer-twitter]. 
+The tweets follow a parent-child construction. All tweets contain a user object which can also contain a geo-tagged child object describing the geographic location of where the tweet originated. The tweet also contains an entities object that consists of information such as assigned hashtags, URLs, user mentions, and any sort of media material [@www-developer-twitter]. The data record also contains a flag to indicate if the tweet has been retweeted, or has been forwarded by someone else to another person. A retweet is typically comprised of someone else's comments that a user would like to share.  
+
+## Twitter Cloud Storage
+
+There are many options available today to store twitter data within a cloud storage platform. Cloud storage consists of storing data within logical pools that can span multiple servers and multiple locations throughout many locations [@www-en-wikipedia-cloud]. Cloud services can be accessed through a dedicated cloud service platform, website API's. [@www-en-wikipedia-cloud].
 
 I intend to store the data within a MongoDB Atlas Cluster run using the AWS platform, for which I’ve created an account. I would also like to provide appropriate visualizations using the Python Matplotlib library.    
+
+## Visualizations
 
 ## Results
 
