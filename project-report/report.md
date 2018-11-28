@@ -81,11 +81,25 @@ The tweets follow a parent-child construction. All tweets contain a user object 
 
 ## Twitter Cloud Storage
 
-There are many options available today to store twitter data within a cloud storage platform. Cloud storage consists of storing data within logical pools that can span multiple servers and multiple locations throughout many locations [@www-en-wikipedia-cloud]. Cloud services can be accessed through a dedicated cloud service platform, website API's. [@www-en-wikipedia-cloud].
+There are many options available today to store twitter data within a cloud storage platform. Cloud storage consists of storing data within logical pools that can span multiple servers and multiple locations throughout many locations [@www-en-wikipedia-cloud]. Cloud services can be accessed through a dedicated cloud service platform, and website APIs such as cloud desktop storage and gateways. [@www-en-wikipedia-cloud].  Some of the main players in today's cloud computing market are Amazon Web Services, Microsoft Azure, and Google iCloud. The focus of this paper will be on the Amazon Web Services platform. 
 
-I intend to store the data within a MongoDB Atlas Cluster run using the AWS platform, for which I’ve created an account. I would also like to provide appropriate visualizations using the Python Matplotlib library.    
+Amazon Web Services (AWS) provides a portfolio of services that can help organizations deal with the voluminous amounts of data that's available in Twitter. AWS provides a cloud storage service called S3 which is capable of storing data of any type from a variety of sources including web sites, mobile apps, and even IoT sensors [@www-aws-amazon-s3]. Used in conjunction with Amazon Glacier, and Amazon Glue, one could build a secure data lake in the cloud that could be set up to contain streaming twitter data. Once the data is in the data lake, one can take advantage of cutting-edge advanced machine learning and analytics capabilities available through additional Amazon services such as AWS Athena (Interactive analytics), AWS Kinesis (Real-Time Analytics), and AWS Sagemaker and Deep Learning AMIs
+[@www-was-amazon-s3].
 
+-- insert AWS image here
+
+A lot of organizations today leverage the power and scalability of the S3 platform and come to rely on the system for its day-to-day data needs. That reliability was tested during an S3 outage that occurred on February 27th, 2017 that effected Amazon's entire US-EAST-1 region. This outage caused widespread website outages and vast disruptions to Amazon's clients. The issue was caused by an Amazon employee typing an incorrect command which caused several key subsystems to go offline [@www-theverge-s3]. This was an embarassing incident for Amazon that just goes to show how important cloud services have become in recent years.  
+
+In addition to the S3 platform, Amazon includes other services that allow users to set up and manage virtual machines and virtual cloud platforms. Users can create a cloud cluster leveraging one of these services and run a different database application that is more suitable to their data needs. MongoDB Atlas, an open source database storage system that provides support for JSON document style data, is one of those types of applications that can be stood up and managed on an Amazon Virtual Private Cloud (VPC). Mongo Atlas provides a platform from which users can create and manage their own clusters, as well as set up automation jobs to manage provisioning and deployment tasks [@www-mongodb-com]. Users are required to create an account with Mongo DB Atlas, which provides a minimum of 512 MB of storage for a free cloud database, but can be updated to 10 GB or more along with dedicated RAM, backups, and performance optimization with the creation of a dedicated cluster [@www-mongodb-com]. In addition to running on Amazon VPC, MongoDB Atlas also run on Microsoft Azure and Google Cloud. 
+
+MongoDB Atlas was designed to handle large datasets by spreading the data among many servers with the cloud computing platform [@www-mongodb-bigdata]. MongoDB can also be connected to a Hadoop instance to deal with the upcoming challenges that are presented by Big Data. This creates an ideal environment to house streaming Twitter data as MongoDB is perfect for document data types such as JSON. 
+
+MongoDB Atlas can be provisioned to connect to other applications using different connection methods. 
+
+   
 ## Visualizations
+
+-- matplotlib
 
 ## Results
 
