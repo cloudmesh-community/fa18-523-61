@@ -90,16 +90,41 @@ Amazon Web Services (AWS) provides a portfolio of services that can help organiz
 
 A lot of organizations today leverage the power and scalability of the S3 platform and come to rely on the system for its day-to-day data needs. That reliability was tested during an S3 outage that occurred on February 27th, 2017 that effected Amazon's entire US-EAST-1 region. This outage caused widespread website outages and vast disruptions to Amazon's clients. The issue was caused by an Amazon employee typing an incorrect command which caused several key subsystems to go offline [@www-theverge-s3]. This was an embarassing incident for Amazon that just goes to show how important cloud services have become in recent years.  
 
-In addition to the S3 platform, Amazon includes other services that allow users to set up and manage virtual machines and virtual cloud platforms. Users can create a cloud cluster leveraging one of these services and run a different database application that is more suitable to their data needs. MongoDB Atlas, an open source database storage system that provides support for JSON document style data, is one of those types of applications that can be stood up and managed on an Amazon Virtual Private Cloud (VPC). Mongo Atlas provides a platform from which users can create and manage their own clusters, as well as set up automation jobs to manage provisioning and deployment tasks [@www-mongodb-com]. Users are required to create an account with Mongo DB Atlas, which provides a minimum of 512 MB of storage for a free cloud database, but can be updated to 10 GB or more along with dedicated RAM, backups, and performance optimization with the creation of a dedicated cluster [@www-mongodb-com]. In addition to running on Amazon VPC, MongoDB Atlas also run on Microsoft Azure and Google Cloud. 
+In addition to the S3 platform, Amazon includes other services that allow users to set up and manage virtual machines and virtual cloud platforms. Users can create a cloud cluster leveraging one of these services and run a different database application that is more suitable to their data needs. MongoDB Atlas, an open source database storage system that provides support for JSON document style data, is one of those types of applications that can be stood up and managed on an Amazon Virtual Private Cloud (VPC). Mongo Atlas provides a platform from which users can create and manage their own clusters, as well as set up automation jobs to manage provisioning and deployment tasks [@www-mongodb-com]. Users are required to create an account with Mongo DB Atlas, which provides a minimum of 512 MB of storage for a free cloud database, but can be updated to 10 GB or more along with dedicated RAM, backups, and performance optimization with the creation of a dedicated cluster [@www-mongodb-com]. In addition to running on Amazon VPC, MongoDB Atlas can also run on Microsoft Azure and Google Cloud. 
+
+Connecting to MongoDB Atlas from python is fairly straightforward and requires the pymongo python library to be installed. The pymongo library contains several tools that enables the user to connect to a MongoDB data, either on their local machine, or a database hosted on a MongoDB Atlas cluster. Users must use the pip method from a command prompt or terminal screen and run the following command:
+
+-- insert pip command for pymongo installation
+
+After the pip command is completed and pymongo is installed, the library must be imported into python using the following simple command:
+
+-- insert import pymongo command
+
+The Mongo Client component is one of the pymongo tools allowing for python to connect to a MongoDB database. Connecting to a local instance of MongoDB is simple and requires that the software is fully installed and the MongoDB service is up and running.Also, port 27017 must be available on your machine in order for the two applications to communicate properly. The python command for connecting to a local MongoDB instance is as follows:
+
+-- insert mongoDB connection script to local machine
+
+Connecting to a MongoDB Atlas cluster involves a few more steps. First, before you can start up a cluster, there are a few requirements that need to be met. Users must have the correct TLS/SSL support in place and be able to have the correct SNI driver installed in order to connect [@www-docs-mongodb-atlas]. Users must also add their IP address to the MongoDB Atlas Whitelist. This ensures that the only connections allowed will be listed in MongoDB's whitelist [@www-docs-mongodb-atlas]. Next, users must create a user account with Admin access in order to be able to administer the cluster. After those steps are complete, and the cluster has been started up, users must choose a connection method to use in order to connect to another application. The connection dialog contains different connection strings for different versions of applications including Java, C, C++, Perl, Ruby, and Python. To set up a connection between MongoDB Atlas and Python, users will need to select a URI connection string based on their version of Python. Next, they will need to paste that string within their python script within the following pymongo command:
+
+-- insert mongoDB Atlas connection script image. 
+
+After this is complete, and you're able to connect without any issues, you can begin to create databases, collect and insert data into the MongoDB database, as well as other data related tasks. Just a note on connecting to MongoDB, users will sometimes receive error messages pertaining to DNS connection errors. To resolve this, users need to install the dnspython library using the pip method and importing the resolver tool from the dnspython library within python. 
+
+-- insert image of dnspython import string
 
 MongoDB Atlas was designed to handle large datasets by spreading the data among many servers with the cloud computing platform [@www-mongodb-bigdata]. MongoDB can also be connected to a Hadoop instance to deal with the upcoming challenges that are presented by Big Data. This creates an ideal environment to house streaming Twitter data as MongoDB is perfect for document data types such as JSON. 
 
 MongoDB Atlas can be provisioned to connect to other applications using different connection methods. 
 
+## Data Science Algorithms for Twitter Data
+
+
    
 ## Visualizations
 
--- matplotlib
+-- matplotlib, redash, MongoDB Compass
+
+
 
 ## Results
 
