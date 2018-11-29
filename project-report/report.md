@@ -112,6 +112,12 @@ After this is complete, and you're able to connect without any issues, you can b
 
 -- insert image of dnspython import string
 
+Once fully connected to MongoDB, you begin to 'listen' or search for tweets that contain a specific word, phrase, user, #hashtag, or any other piece of information that you're interested in mining for. There's a couple of ways to set up the search criteria, but typically a variable is created that contains the search words such as listed below:
+
+-- insert code samples for setting up variables, search words, count, periods.
+
+You can configure tweepy to work in a search or streaming manner. Tweepy has a class entitled StreamListener that will access the Twitter API and pull all tweets are created using the specified criteria [@www-pythondata-twitter]. Once executed, the script will continue streaming until the script is stopped. 
+
 MongoDB Atlas was designed to handle large datasets by spreading the data among many servers with the cloud computing platform [@www-mongodb-bigdata]. MongoDB can also be connected to a Hadoop instance to deal with the upcoming challenges that are presented by Big Data. This creates an ideal environment to house streaming Twitter data as MongoDB is perfect for document data types such as JSON. 
 
 MongoDB Atlas can be provisioned to connect to other applications using different connection methods. 
