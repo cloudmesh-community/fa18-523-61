@@ -4,6 +4,8 @@
 
 :o: refs missing
 
+-- Still a draft. Images will be inserted soon
+
 | Jay Stockwell
 | jaystock@iu.edu
 | Indiana University
