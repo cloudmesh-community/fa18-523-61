@@ -1,6 +1,6 @@
 # Twitter Text Mining using Python. MongoDB, and Amazon Web Services  - :hand: fa18-523-61
 
--- working title, not finalized yet..
+:o: finalize title
 
 | Jay Stockwell
 | jaystock@iu.edu
