@@ -148,6 +148,23 @@ Conversely, querying and analyzing twitter data in python is an compelling and d
 
 ## Data Science Algorithms for Twitter Data
 
+For this  paper, I decided to perform an analytical exercise against a twitter data set to investigate and compare two different algorithms and how effective they are for analyzing and classifying tweets. I've determined from my research that Deep Learning algorithms such as Neural Networks are very effective when implemented against twitter data, but I wanted to also compare the accuracy scores and performance to that of a the Naive Bayes classification model. I will be collecting two datasets in python using the tweepy tool; one containing tweets with the hashtag #cats, and a second dataset containing tweets with the hashtag #dogs. 
+
+The Naïve Bayes classification method is based on Bayes Theorem probability theory to classify data into distinct classes.  The method assumes independence between all of the attributes used in the algorithm and it works on the assumption that a particular feature in a class in unrelated to the rest of the features included in the analysis [@www-analyticsvidhaya-nb]. Naive Bayes is a fairly simple algoritm to set up, and it runs very effectively against very large datasets such as those used in Big Data. 
+
+Below is the mathematical formula that comprises the algorithm. The formula follows the Bayes Rule of Probability:
+
+-- insert image of mathematical formula
+
+The foundation of the formula is that it calculates the posterior probability P(c|x) from the other variables in the equation, P(c), P(x), and P(x|c) [@www-analyticsvidhaya-nb].
+
+The method has gained popularity recently with usage as an effective spam filter, text analysis, and medical diagnosis tool.  For this exercise, I choose the multinomial Naïve Bayes model as it appears to be more suitable for text classification by explicitly modeling the word counts and makes adjustments to any underlying calculations involved. 
+
+Neural networks function similar to that of the human neuron. Neural networks make predictions by learning the relationships between your data features and other previous observations. This approach works by feeding data into an input layer that goes through a series of transformations within hidden layers until a final transformation occurs and a final output is produced. Neural networks are popular in natural language classification tasks because of the ability for neural networks to create an embedded layer. Through vectorization, the words in the embedded layer become mathematical arrays. These vectors can be very useful in text classification.   
+
+
+
+
 
    
 ## Visualizations
