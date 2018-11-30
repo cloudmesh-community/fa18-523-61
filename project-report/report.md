@@ -63,8 +63,6 @@ Next, I installed the latest version of Python, which is version 3.7.1. Python i
 
 ## Data
 
-For this term paper, I created a Twitter API account and used Python to connect to Twitter directly using a set of credentials that were supplied to me. Using a python script, I created two sets of data; one for tweets that contained the hashtag #dog and a second dataset that contained tweets with the hashtag #c .at. After the data is pulled, the json data is converted into dataframes using the pandas package. 
-
 Twitter data, when extracted, is in JSON format. JSON (Javascript Object Notation) is a data interchange format that is both easy for humans to read and write, and easy for machines to parse and implement [@www-json-org]. A json object is basically a set of key value pairs ending contained within two braces. 
 
 -- add JSON object image here 
@@ -75,13 +73,15 @@ A json array is essentially a collection of key values contained within two brac
 
 Twitter JSON data is comprised of many different components, all of which are used to describe individual tweets. 
 
->> "At Twitter we serve many objects as JSON, including Tweets and Users. These objects all encapsulate core attributes that describe      the object. Each Tweet has an author, a message, a unique ID, a timestamp of when it was posted, and sometimes geo metadata shared by    the user. Each User has a Twitter name, an ID, a number of followers, and most often an account bio [@www-developer-twitter]".
+> "At Twitter we serve many objects as JSON, including Tweets and Users. These objects all encapsulate core attributes that describe       the object. Each Tweet has an author, a message, a unique ID, a timestamp of when it was posted, and sometimes geo metadata shared by   the user. Each User has a Twitter name, an ID, a number of followers, and most often an account bio [@www-developer-twitter]".
 
 Below is an example of a tweet and a description of the content:
 
 -- insert image of sample json twitter record
 
 The tweets follow a parent-child construction. All tweets contain a user object which can also contain a geo-tagged child object describing the geographic location of where the tweet originated. The tweet also contains an entities object that consists of information such as assigned hashtags, URLs, user mentions, and any sort of media material [@www-developer-twitter]. The data record also contains a flag to indicate if the tweet has been retweeted, or has been forwarded by someone else to another person. A retweet is typically comprised of someone else's comments that a user would like to share.  
+
+For this term paper, I created a Twitter API account and used Python to connect to Twitter directly using a set of credentials that were supplied to me. Using a python script, I created two sets of data; one for tweets that contained the hashtag #dog and a second dataset that contained tweets with the hashtag #c .at. After the data is pulled, the json data is converted into dataframes using the pandas package. 
 
 ## Twitter Cloud Storage
 
@@ -122,7 +122,7 @@ Once fully connected to MongoDB, you begin to 'listen' or search for tweets that
 
 You can configure tweepy to work in a search or streaming manner. Tweepy has a class entitled StreamListener that will access the Twitter API and pull all tweets are created using the specified criteria [@www-pythondata-twitter]. Once executed, the script will continue streaming until the script is stopped. The api.search method will provide a collection of tweets based upon a count variable specified earlier. One thing of note is the Tweepy will only return 100 tweets at a time, so the script will need to contain an iterative loop function to run continuously until the value specified in the count variable is met. 
 
-After the script is run, the data can now be inserted into the MongoDB Atlas database. The pymongo library includes an insert function that will allow the user to insert either one record, or many records into the database. In order to use the insert many function, you will need to create a collection database object. A MongoDB collection is essentially a collection of documents, or in relation to Twitter data, a collection of json documents [@www-docs-mongodb-collections]. The collection, if it doesn't already exist, can be created within the insert statement itself. Below are two examples:
+After the script is run, the data can now be inserted into the MongoDB Atlas database. The pymongo library includes an insert function that will allow the user to insert either one record, or many records into the database. In order to use the insert many function, you will need to create a collection database object. A MongoDB collection is essentially a collection of documents, or in relation to Twitter data, a collection of json documents [@www-docs-mongodb-collections]. A collection can be thought of as being similar to a SQL relational table [@www-blog-jlevente-intro]. The collection, if it doesn't already exist, can be created within the insert statement itself. Below are two examples:
 
 -- insert sample insert statements
 
@@ -132,9 +132,13 @@ The python script can be run multiple time to continously gather tweets. However
 
 Twitter Data contained within the MongoDB database can be queried from within Python using specific command line arguments and functions from the pymongo library. The argument findone() will return the very first record in the database and will include every item associated with that record. With Twitter data, the findone() argument will return all of the components of the first tweet collected such as key, timestamp, description, user, etc. If you want to zero in on one specific item within the tweet, you can add some additional information to the findone() argument. For example,if I wanted to see the key of the first tweet, I would add 'key' to the findone() argument as findone.key(). The argument needs to also contain the data collection that we are querying. The full line is below:
 
--- insert findone command.
+-- insert findone command image.
 
-MongoDB Atlas was designed to handle large datasets by spreading the data among many servers with the cloud computing platform [@www-mongodb-bigdata]. MongoDB can also be connected to a Hadoop instance to deal with the upcoming challenges that are presented by Big Data. This creates an ideal environment to house streaming Twitter data as MongoDB is perfect for document data types such as JSON. 
+To return all of the records in the database, a cursor object must be created in the python script that will allow the user to read and analyze all of the records within the collection [@www-blog-jlevente]. A cursor can be created by setting up a find() argument within a collection. You can also limit the results by including a limit argument set to the desired number of records. 
+
+-- insert image of find() command with limit argument.
+
+MongoDB Atlas was designed to handle large datasets by spreading the data among many servers with the cloud computing platform [@www-mongodb-bigdata]. MongoDB can also be connected to a Hadoop instance to deal with the upcoming challenges that are presented by Big Data. This creates an ideal environment to house streaming Twitter data as MongoDB is perfect for document data types such as JSON. MongoDB is also thought of as being a great platform for working with Big Data because of the high scalability offered by MongoDB [@www-blog-jlevente-intro]. However, there have been some points of contention that have arisen with NoSQL databases such as MongoDB. 
 
 MongoDB Atlas can be provisioned to connect to other applications using different connection methods. 
 
