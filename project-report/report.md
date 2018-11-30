@@ -4,7 +4,7 @@
 
 :o: refs missing
 
--- Still a draft. Images and references will be inserted soon
+-- Still a draft. Images and references will be inserted/updated soon.
 
 | Jay Stockwell
 | jaystock@iu.edu
