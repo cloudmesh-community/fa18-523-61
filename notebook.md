@@ -82,3 +82,8 @@
 * Create MongoDB Atlas account and stood up VM cluster
 * Added new material to project paper, primarily around implementation section.
 
+## Week of 11/23/2018 - 11/29/2018
+
+* Changed focus of project paper to that of a term paper.
+* Continued research on MongoDB Atlas, Twitter and Big Data, and Twitter and Python
+* Continued adding new material to term paper draft.
