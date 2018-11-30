@@ -60,10 +60,9 @@ The requirements for this project are to run a python script to collect twitter 
 
 Next, I installed the latest version of Python, which is version 3.7.1. Python is an open source general purpose programming language that is very useful for data science projects. There are numerous libraries available to install within Python that will help you accomplish your end goal. For this project, the primary library that I want to use for collecting twitter data is tweepy. Tweepy is designed to handle multiple aspects of twitter tweet collection including authentication, connection, session management, and reading and routing incoming messages [@www-tweepy-io]. 
 
-
 ## Data
 
-Twitter data, when extracted, is in JSON format. JSON (Javascript Object Notation) is a data interchange format that is both easy for humans to read and write, and easy for machines to parse and implement [@www-json-org]. A json object is basically a set of key value pairs ending contained within two braces. 
+Twitter data, when extracted, is in JSON format. JSON (Javascript Object Notation) is a data interchange format that is both easy for humans to read and write, and easy for machines to parse and implement [@www-json-org]. A json object is basically a set of key value pairs ending contained within two braces. This format borrows heavily from the Javascript programming language, hence the Javascript component of the term [[@www-packtpub-com-json]. The format is considered to be structured, as you would expect to see relational data within a table, but it's considered to be thought of as semi-structured which  "..the structure is either flexible or not fully predefined. It is sometimes also referred to as a self-describing structure [@www-packtpub-com-json]." The JSON datatype has proven to be very popular and has garnered wide usages with seb sites due to the effective way in which JSON data can be exchanged between client and server web applications [@www-packtpub-com-json]. Below is sample JSON object: 
 
 -- add JSON object image here 
 
@@ -138,9 +137,10 @@ To return all of the records in the database, a cursor object must be created in
 
 -- insert image of find() command with limit argument.
 
-MongoDB Atlas was designed to handle large datasets by spreading the data among many servers with the cloud computing platform [@www-mongodb-bigdata]. MongoDB can also be connected to a Hadoop instance to deal with the upcoming challenges that are presented by Big Data. This creates an ideal environment to house streaming Twitter data as MongoDB is perfect for document data types such as JSON. MongoDB is also thought of as being a great platform for working with Big Data because of the high scalability offered by MongoDB [@www-blog-jlevente-intro]. However, there have been some points of contention that have arisen with NoSQL databases such as MongoDB. 
+MongoDB Atlas was designed to handle large datasets by spreading the data among many servers with the cloud computing platform [@www-mongodb-bigdata]. MongoDB can also be connected to a Hadoop instance to deal with the upcoming challenges that are presented by Big Data. This creates an ideal environment to house streaming Twitter data as MongoDB is perfect for document data types such as JSON. MongoDB is also thought of as being a great platform for working with Big Data because of the high scalability offered by MongoDB [@www-blog-jlevente-intro]. However, there have been some points of contention that have arisen with NoSQL databases such as MongoDB. Some users that have used MongoDb to store twitter data have reported issues related to duplicate data, which was addressed earlier with the creation of an index. Another issue is that because of the structure of Twitter data and the document storage type, it is very hard, if not impossible to do SQL style joins within the data [@www-sarahmei-com]. Social media data is highly unstructured, and individuals that are accustomed to working with relational SQL based databases may find this type of document styled data very hard to understand, analyze, and construct effective queries against. 
 
-MongoDB Atlas can be provisioned to connect to other applications using different connection methods. 
+Conversely, querying and analyzing twitter data in python is an compelling and direct way to open many new doors to insights. 
+
 
 ## Data Science Algorithms for Twitter Data
 
