@@ -168,6 +168,76 @@ The second algorithm I wanted to experiment with is Neural Networks. Neural netw
 
 Neural networks are popular in natural language classification tasks because of the ability for neural networks to create an embedded layer. Through vectorization, the words in the embedded layer become mathematical arrays. These vectors can be very useful in text classification. Deep neural networks, due to their extensive feature training, have gained traction with sentiment analysis in recent years due to the improvements with deep learning models and how they can handle increasing levels of complexity with very large data sets [@www-researchgate.net]. The feature generation aspect of the deep neural network process is also what makes this algorithm very flexible and adaptable to various datasets [@www-researchgate.net]. 
 
+## Running a Twitter Script in Python
+
+As mentioned earlier, one of my objectives of this paper is to examine how a basic python scrip is setup and implemented using using data mined from Twitter. The scenario is to design a script that pulls tweets with the hashtags #cats and #dogs. Working with these hashtags, I wanted to generate a simple script that can be used to classify if a person is a cat or dog person based on their tweets. I wanted to evaluate the performance and accuracy of the two classification algorithms used, as well as evaluate any issues and challenges that arose during my experiment.  
+
+### Python Libraries
+
+Below is the full list of libraries that I imported:
+
+    import tweepy
+    import matplotlib.pyplot as plt
+    import matplotlib
+    !pip install tweepy
+    import sys
+    import jsonpickle
+    !pip install jsonpickle
+    import os,json
+    import pandas as pd
+    import numpy
+    import re
+    from wordcloud import WordCloud, STOPWORDS
+    import warnings
+    import sklearn
+    import sklearn.metrics 
+    from sklearn import metrics
+    import sklearn.naive_bayes
+    from sklearn.naive_bayes import MultinomialNB
+    from sklearn.metrics import classification_report
+    from sklearn.metrics import confusion_matrix
+    import sklearn.svm
+    import sklearn.neighbors
+    import sklearn.neural_network
+    from sklearn.feature_extraction.text import CountVectorizer
+    import seaborn as sns
+
+From the sklearn library, I created a function to gauge the precision scores from the two algorithms that will be used later in the script. The precision scores will help me assess whether a record was classified incorrectly, for example a record that is labeled a positive when it should have been labeled negative [@www- scikit-learn-ps].
+
+    def print_score(Ytrue,Ypred):
+      s = (sklearn.metrics.precision_score(Ytrue,Ypred),
+              sklearn.metrics.recall_score(Ytrue,Ypred),
+              sklearn.metrics.f1_score(Ytrue,Ypred))
+      print('Precision: {:0.3}\nRecall: {:0.3}\nF-Score: {:0.3}\n'.format(*s))
+      
+The next step in the code is authentication with the Twitter API. The concepts behind the authentication process were discussed earlier in the paper. If Twitter is unable to authenticate your account with the provided credentials, a "Can't Authenticate" message is display and the script terminates.   
+
+    """twitter credentials. Removed for security reasons."""
+    Credentials file format:
+    consumer_key=YOUR_CONSUMER_KEY
+    consumer_secret=YOUR_CONSUMER_SECRET
+    access_token_key=YOUR_ACCESS_TOKEN
+    access_token_secret=YOUR_ACCESS_TOKEN_SECRET
+
+    """Replace the API_KEY and API_SECRET with your application's key and secret."""
+    auth = tweepy.AppAuthHandler(consumer_key, consumer_secret)
+
+    api = tweepy.API(auth, wait_on_rate_limit=True,
+				       wait_on_rate_limit_notify=True)
+
+    if (not api):
+        print ("Can't Authenticate")
+        sys.exit(-1)
+        
+ Now that I'm authenticated, I can specify my search criteria for the specific tweets I want to identify and collect. A variable called 'SearchQuery' contains the #cats hashtag that I want to search on, the maxTweets variable contains the maximum number of tweets that I would like to collect, the 'tweetsperQry' is set to 100 as this is the maximum amount of tweets the Tweepy API is allow to gather during one iteration using the search function of the API. The 'fname' contains the name of the file in which the tweets will be collected.       
+"""Information about the type of tweets we want to find as well as how many"""
+searchQuery = '#cat'  # this is what we're searching for
+maxTweets = 2000 # Some arbitrary large number
+tweetsPerQry = 100  # this is the max the API permits
+fName = 'cat_tweets.txt' # We'll store the tweets in a text file.
+
+The Naive Bayes and Neural Networks algorithms can be set up and executed veru seamlessly in Python using a variety of libraries. For my analysis, I imported and implemented the Naive Bayes and Neural Network algorithms from the sklearn library. Sklearn contains numerous machine learning algorithmic functions and toolkits, and is a manageable task as far as setup and implementation is concerned. After creating the train and test datasets in python with the desired twitter data, setting up and running the algorithm in Python is straightforward. In addition to setting up the algorithm, I added in a vectorization component from the sklearn library to leverage with the algorithm. Vectorization using feature selection  
+
 
 ## Visualizations
 
