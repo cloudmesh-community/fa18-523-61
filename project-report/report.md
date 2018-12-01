@@ -176,6 +176,7 @@ As mentioned earlier, one of my objectives of this paper is to examine how a bas
 
 Below is the full list of libraries that I imported:
 
+```python
     import tweepy
     import matplotlib.pyplot as plt
     import matplotlib
@@ -201,17 +202,20 @@ Below is the full list of libraries that I imported:
     import sklearn.neural_network
     from sklearn.feature_extraction.text import CountVectorizer
     import seaborn as sns
+```
 
 From the sklearn library, I created a function to gauge the precision scores from the two algorithms that will be used later in the script. The precision scores will help me assess whether a record was classified incorrectly, for example a record that is labeled a positive when it should have been labeled negative [@www- scikit-learn-ps].
 
+```python
     def print_score(Ytrue,Ypred):
       s = (sklearn.metrics.precision_score(Ytrue,Ypred),
               sklearn.metrics.recall_score(Ytrue,Ypred),
               sklearn.metrics.f1_score(Ytrue,Ypred))
       print('Precision: {:0.3}\nRecall: {:0.3}\nF-Score: {:0.3}\n'.format(*s))
-      
+```      
 The next step in the code is authentication with the Twitter API. The concepts behind the authentication process were discussed earlier in the paper. If Twitter is unable to authenticate your account with the provided credentials, a "Can't Authenticate" message is display and the script terminates.   
 
+```python
     """twitter credentials. Removed for security reasons."""
     Credentials file format:
     consumer_key=YOUR_CONSUMER_KEY
@@ -228,13 +232,99 @@ The next step in the code is authentication with the Twitter API. The concepts b
     if (not api):
         print ("Can't Authenticate")
         sys.exit(-1)
-        
- Now that I'm authenticated, I can specify my search criteria for the specific tweets I want to identify and collect. A variable called 'SearchQuery' contains the #cats hashtag that I want to search on, the maxTweets variable contains the maximum number of tweets that I would like to collect, the 'tweetsperQry' is set to 100 as this is the maximum amount of tweets the Tweepy API is allow to gather during one iteration using the search function of the API. The 'fname' contains the name of the file in which the tweets will be collected.       
+```        
+ Now that I'm authenticated, I can specify my search criteria for the specific tweets I want to identify and collect. A variable called 'SearchQuery' contains the #cats hashtag that I want to search on, the maxTweets variable contains the maximum number of tweets that I would like to collect, the 'tweetsperQry' is set to 100 as this is the maximum amount of tweets the Tweepy API is allow to gather during one iteration using the search function of the API. The 'fname' contains the name of the file in which the tweets will be collected.     
+
+```python
 """Information about the type of tweets we want to find as well as how many"""
 searchQuery = '#cat'  # this is what we're searching for
 maxTweets = 2000 # Some arbitrary large number
 tweetsPerQry = 100  # this is the max the API permits
 fName = 'cat_tweets.txt' # We'll store the tweets in a text file.
+```
+
+Since the Tweepy API only allows 100 tweets per iteration, the script contains a functions that runs in a loop until the maxTweets value has been reached. If any issues arise, the function will terminate.
+```python
+    SinceID = None
+    max_id = 1
+    tweetCount = 0
+    print("Downloading max {0} tweets".format(maxTweets))
+    with open(fName, 'w') as f:
+        while tweetCount < maxTweets:
+            try:
+                if (max_id <= 0):
+                    if (not sinceId):
+                        new_tweets = api.search(q=searchQuery, count=tweetsPerQry)
+                    else:
+                        new_tweets = api.search(q=searchQuery, count=tweetsPerQry,
+                                                since_id=sinceId)
+                else:
+                    if (not sinceId):
+                        new_tweets = api.search(q=searchQuery, count=tweetsPerQry,
+                                                max_id=str(max_id - 1))
+                    else:
+                        new_tweets = api.search(q=searchQuery, count=tweetsPerQry,
+                                                max_id=str(max_id - 1),
+                                                since_id=sinceId)
+                if not new_tweets:
+                    print("No more tweets found")
+                    break
+                for tweet in new_tweets:
+                    f.write(jsonpickle.encode(tweet._json, unpicklable=False) +
+                            '\n')
+                tweetCount += len(new_tweets)
+                print("Downloaded {0} tweets".format(tweetCount))
+                max_id = new_tweets[-1].id
+            except tweepy.TweepError as e:
+                # Just exit if any error
+                print("some error : " + str(e))
+                break
+
+    print ("Downloaded {0} tweets, Saved to {1}".format(tweetCount, fName))
+```
+
+The iteration loop has completed, and I've created two dataset that contains data for the hashtags of #cats and #dogs. For this paper, I found that working with twitter data that was contained in dataframes was easier to analyze. I used the pandas dataframe function to take the twitter data from the iteration script and load into two separate dataframes.
+
+```python
+dogs = pd.read_json("C:/Users/Jay/PycharmProjects/ADS_Assignments/FinalExercise/dog_tweets.txt",lines=True)
+cats = pd.read_json("C:/Users/Jay/PycharmProjects/ADS_Assignments/FinalExercise/cat_tweets.txt",lines=True)
+```
+A crucial step when working on a new set of data is to perform some type of data preprocessing and exploration.  This gives you a good sense of that data contents, and if you need to perform some cleansing of the data such as removing null values and incorrect characters or words. 
+
+In this example, the first two lines provide a record count. Next, using the dogs dataset, I created a new column entitled tweety and extracted all the URLs and usernames from the collected tweets into that new column. I decided to remove all URLS, RT's (retweets), and usernames or twitter handles. 
+```python
+dogs['tweety'] = '' 
+
+#add tweety first part
+for i in range(len(dogs['text'])):
+    try:
+        dogs['tweety'][i] = dogs['text'].str.split(' ')[i][0]
+    except AttributeError:    
+        dogs['tweety'][i] = 'other'
+
+#Preprocessing tweety. select tweety contains 'RT @'
+for i in range(len(dogs['text'])):
+    if dogs['tweety'].str.contains('@')[i]  == False:
+        dogs['tweety'][i] = 'other'
+        
+# remove URLs, RTs, and twitter handles
+for i in range(len(dogs['text'])):
+    dogs['text'][i] = " ".join([word for word in dogs['text'][i].split()
+                                if 'http' not in word and '@' not in word and '<' not in word])
+dogs['followers_count'][1]
+```
+I performed the aforementioned step again with the #cats dataset. 
+
+Within Natural Language Processing, there are textual components that do not provide any significance to the analysis. These are referred to as stopwords. Some examples of stopwords are *is*, *the*, and *is*. Stopwords should be removed during the processing step to eliminate unnecessary information from being included in the analysis [@www-xpo6-com].  The nltk python library has contains a corpus library of which contains a comprehensive list of stopwords. 
+
+```python
+import nltk
+import nltk.corpus
+nltk.download('stopwords')
+stopwds = list(nltk.corpus.stopwords.words('english'))
+## stopwds
+```
+
 
 The Naive Bayes and Neural Networks algorithms can be set up and executed veru seamlessly in Python using a variety of libraries. For my analysis, I imported and implemented the Naive Bayes and Neural Network algorithms from the sklearn library. Sklearn contains numerous machine learning algorithmic functions and toolkits, and is a manageable task as far as setup and implementation is concerned. After creating the train and test datasets in python with the desired twitter data, setting up and running the algorithm in Python is straightforward. In addition to setting up the algorithm, I added in a vectorization component from the sklearn library to leverage with the algorithm. Vectorization using feature selection  
 
