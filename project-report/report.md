@@ -156,24 +156,28 @@ Below is the mathematical formula that comprises the algorithm. The formula foll
 
 -- insert image of mathematical formula
 
+-- insert information about what the variables mean
+
+
+
 The foundation of the formula is that it calculates the posterior probability P(c|x) from the other variables in the equation, P(c), P(x), and P(x|c) [@www-analyticsvidhaya-nb].
 
-The method has gained popularity recently with usage as an effective spam filter, text analysis, and medical diagnosis tool.  For this exercise, I choose the multinomial Naïve Bayes model as it appears to be more suitable for text classification by explicitly modeling the word counts and makes adjustments to any underlying calculations involved. 
+The Naive Bayes classification method has gained popularity recently with usage as an effective spam filter, text analysis, and medical diagnosis tool.  I wanted to utilize the multinomial Naïve Bayes model as it appears to be more suitable for text classification by explicitly modeling the word counts and makes adjustments to any underlying calculations involved. 
 
-Neural networks function similar to that of the human neuron. Neural networks make predictions by learning the relationships between your data features and other previous observations. This approach works by feeding data into an input layer that goes through a series of transformations within hidden layers until a final transformation occurs and a final output is produced. Neural networks are popular in natural language classification tasks because of the ability for neural networks to create an embedded layer. Through vectorization, the words in the embedded layer become mathematical arrays. These vectors can be very useful in text classification.   
+The second algorithm I wanted to experiment with is Neural Networks. Neural networks function as an information processing model that closely mirrors how biological nervous systems , specifically neurons, process information [@www-doc-ic-ac-uk]. Neural networks make predictions by learning the relationships between your data features and other previous observations. This approach works by feeding data into an input layer that goes through a series of transformations within hidden layers until a final transformation occurs and a final output is produced. Deep neural networks go a step further due to the larger number of nodes or layers that the data passes through in a complex, multi-step process of pattern and correlation recognition [@www-skymind.ai].  Working with more layers provides more opportunities for the data to train on the features abd patterns recognized in the previous layer, which in turn produces a more and more complex hierarchy know as a feature hierarchy [@www-skymind.ai]. 
+
+Neural networks are popular in natural language classification tasks because of the ability for neural networks to create an embedded layer. Through vectorization, the words in the embedded layer become mathematical arrays. These vectors can be very useful in text classification. Deep neural networks, due to their extensive feature training, have gained traction with sentiment analysis in recent years due to the improvements with deep learning models and how they can handle increasing levels of complexity with very large data sets [@www-researchgate.net]. The feature generation aspect of the deep neural network process is also what makes this algorithm very flexible and adaptable to various datasets [@www-researchgate.net]. 
 
 
-
-
-
-   
 ## Visualizations
 
--- matplotlib, redash, MongoDB Compass
-
-
+-- matplotlib, redash, MongoDB Compass, wordclouds 
 
 ## Results
+
+| Tables | are    | cool |
+| ------ |:------:|-----:|
+| Col 3  | right  |$1600 |
 
 ## Conclusion
 
