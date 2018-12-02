@@ -9,14 +9,16 @@
 
 ---
 
-Keywords : Natural Language Processing, Natural Language Understanding, Natural Language Toolkit, Deep Learning, SyntaxNet, 
+Keywords: Natural Language Processing, Natural Language Understanding, Natural Language Toolkit, Deep Learning, SyntaxNet, 
 Part of Speech tagging, Hadoop
 
 ---
 
+:o: this paper is to short to justify an abstract, please merge into introduction
+
 ## Abstract
 
-This paper examines Natural Language Processing (NLP) and its usage in Big Data, the current challenges facing NLP, and solutions to those challenges using new concepts and applications.  Organizations have recently begun to harness the immense power of big data and how the concept can prove to be a beneficial component.  The term big data used to be a scary term that elicited feelings of consternation and anxiety, but with organizations experiencing exponential growth in data volume, the term has become mainstream and widely accepted.  Big data is largely unstructured text and constantly in a state of enormous flux, which is why NLP offers many opportunities to tap into this vast data resource [@www-expertsystem]. This paper will explore the evolving, and sometimes challenging relationship between NLP and Big Data, the problems that NLP can solve, which applications are leveraged, and how the data can be transformed into a presentable format for consumption. 
+We examines Natural Language Processing (NLP) and its usage in Big Data, the current challenges facing NLP, and solutions to those challenges using new concepts and applications.  Organizations have recently begun to harness the immense power of big data and how the concept can prove to be a beneficial component.  The term big data used to be a scary term that elicited feelings of consternation and anxiety, but with organizations experiencing exponential growth in data volume, the term has become mainstream and widely accepted.  Big data is largely unstructured text and constantly in a state of enormous flux, which is why NLP offers many opportunities to tap into this vast data resource [@www-expertsystem]. This paper will explore the evolving, and sometimes challenging relationship between NLP and Big Data, the problems that NLP can solve, which applications are leveraged, and how the data can be transformed into a presentable format for consumption. 
 
 ## Introduction
 
