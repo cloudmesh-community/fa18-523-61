@@ -4,6 +4,10 @@
 
 :o: refs missing
 
+:o: please remove first person writing style
+
+:o: please remove phrases such as in this paper, in this term paper ...
+
 -- Still a draft. Images and references will be inserted/updated soon.
 
 | Jay Stockwell
