@@ -50,17 +50,26 @@ Python is also very scaleable within this environment. Another great component i
 
 Python can be leveraged using a basic shell program, which can accomplish basic tasks, or with an interpreter or IDE (Integrated Developer Environments). An IDE is a dedicated program, integrated with several tools such as debuggers, build and execution tools, syntax highlighting, and source control tools, that are specifically used to writing software code [@www-realpython-com]. Some examples pf well known Python specific IDE programs are PyCharm, Spyder, and Thonny. When tasked with developing more sophisticated Python code for data science purposes, it is a good practice to use a dedicated code editor well suited to the task.  
 
-In regards to working with Twitter, there is a Python library entitled Tweepy that can be installed along with any other required libraries and toolkits. Users will need to use the pip command at a terminal screen in order to install tweepy. PIP is a package management system used by Python to install and manage larger software packages [@www-en-wikipedia-pip]. Below is the installation code:
+In regards to working with Twitter, there is a Python library entitled Tweepy that can be installed along with any other required libraries and toolkits. Users will need to use the pip command at a terminal screen in order to install tweepy. PIP is a package management system used by Python to install and manage larger software packages [@www-en-wikipedia-pip]. 
 
--- insert installation snippet
+```
+pip install tweepy
+```
 
 After installation is complete, users will need to use the import function to fully load the tweepy program into the python script that's in development.
 
--- insert import screenshot
+```python
+import tweepy
+```
 
 The next step is authentication between the Twitter API and python. As mentioned earlier, there are 4 required keys needed for this step for which Tweepy is responsible for completing. Tweepy currently supports oauth authentication and authentication is handled via the tweepy AuthHandler class in python [@www-tweepy-io]. Oauth authentication is considered the standard method for token authentication by 3rd-party applications such as Facebook and Twitter. Oauth works on behalf of the end user to provide a token which authorizes specific information to be shared between applications [@www-searchmicroservices].  There are four variables in the python code that will be used to hold the security information
 
--- insert authentication piece
+```python
+consumer_key=YOUR_CONSUMER_KEY
+consumer_secret=YOUR_CONSUMER_SECRET
+access_token_key=YOUR_ACCESS_TOKEN
+access_token_secret=YOUR_ACCESS_TOKEN_SECRET
+```
 
 Once tweepy is set up and the user passes through the authentication step, users can now begin further development on python code that can be implemented against Twitter data.. Tweepy collects tweets in real-time, so the script will be collecting tweets that were released just prior, or during the implementation of the script. The tweepy program in Python can only collect 100 tweets at a time, so the script can be built to contain a function which runs in an iterative loop to collect a set number of tweets as defined by a 'MaxTweets' parameter. Once that parameter value is met, the function terminates. 
 
@@ -105,23 +114,36 @@ In addition to the S3 platform, Amazon includes other services that allow users 
 
 Connecting to MongoDB Atlas from python is fairly straightforward and requires the pymongo python library to be installed. The pymongo library contains several tools that enables the user to connect to a MongoDB data, either on their local machine, or a database hosted on a MongoDB Atlas cluster. Users must use the pip method from a command prompt or terminal screen and run the following command:
 
--- insert pip command for pymongo installation
+```
+python -m pip install pymongo
+```
 
 After the pip command is completed and pymongo is installed, the library must be imported into python using the following simple command:
 
--- insert import pymongo command
+```python
+import pymongo
+```
 
 The Mongo Client component is one of the pymongo tools allowing for python to connect to a MongoDB database. Connecting to a local instance of MongoDB is simple and requires that the software is fully installed and the MongoDB service is up and running.Also, port 27017 must be available on your machine in order for the two applications to communicate properly. The python command for connecting to a local MongoDB instance is as follows:
 
--- insert mongoDB connection script to local machine
+```python
+client = pymongo.MongoClient("localhost",27017)
+```
 
 Connecting to a MongoDB Atlas cluster involves a few more steps. First, before you can start up a cluster, there are a few requirements that need to be met. Users must have the correct TLS/SSL support in place and be able to have the correct SNI driver installed in order to connect [@www-docs-mongodb-atlas]. Users must also add their IP address to the MongoDB Atlas Whitelist. This ensures that the only connections allowed will be listed in MongoDB's whitelist [@www-docs-mongodb-atlas]. Next, users must create a user account with Admin access in order to be able to administer the cluster. After those steps are complete, and the cluster has been started up, users must choose a connection method to use in order to connect to another application. The connection dialog contains different connection strings for different versions of applications including Java, C, C++, Perl, Ruby, and Python. To set up a connection between MongoDB Atlas and Python, users will need to select a URI connection string based on their version of Python. Next, they will need to paste that string within their python script within the following pymongo command:
 
--- insert mongoDB Atlas connection script image. 
+```python
+client = pymongo.MongoDB(mongodb://USERNAME:PASSWORD@cluster0-sample-mongodb.net:27017/<DATABASE>
+```
 
 After this is complete, and you're able to connect without any issues, you can begin to create databases, collect and insert data into the MongoDB database, as well as other data related tasks. Just a note on connecting to MongoDB, users will sometimes receive error messages pertaining to DNS connection errors. To resolve this, users need to install the dnspython library using the pip method and importing the resolver tool from the dnspython library within python. 
 
--- insert image of dnspython import string
+```python
+python -m pip install dnspython
+```
+```python
+from dnspython import resolver
+```
 
 Once fully connected to MongoDB, you begin to 'listen' or search for tweets that contain a specific word, phrase, user, #hashtag, or any other piece of information that you're interested in mining for. There's a couple of ways to set up the search criteria, but typically a variable is created that contains the search words such as listed below:
 
@@ -329,13 +351,95 @@ stopwds = list(nltk.corpus.stopwords.words('english'))
 ## stopwds
 ```
 
+### Visualizations
 
-The Naive Bayes and Neural Networks algorithms can be set up and executed veru seamlessly in Python using a variety of libraries. For my analysis, I imported and implemented the Naive Bayes and Neural Network algorithms from the sklearn library. Sklearn contains numerous machine learning algorithmic functions and toolkits, and is a manageable task as far as setup and implementation is concerned. After creating the train and test datasets in python with the desired twitter data, setting up and running the algorithm in Python is straightforward. In addition to setting up the algorithm, I added in a vectorization component from the sklearn library to leverage with the algorithm. Vectorization using feature selection  
+Visualizing twitter data in python can be accomplished with the use of a variety of different python packages and tools. One of the more popular and useful libraries for creating plots, charts, and other visualizations is Matplotlib. The Matplotlib python library is a 2D graphical tool that creates publication-like visualizations within a variety of platforms including python, ipython, Jupyter notebooks, and other web applications [@www-matplotlib-org]. "Matplotlib makes easy things easy and hard things possible" [@www-matplotlib-org]. 
+Matplotlib installation is straightforward and can be completed with the following code:
+
+```python
+import matplotlib
+import matplotlib.pyplot as plt
+```
+
+Matplotlib contains a tool called pyplot which allows for very simple plotting as well as creating bar charts, line charts, and histograms. The pyplot tool can be utilized to create line and bar charts to show the distribution of twitter users by source. Below is a bar graph depicting the number of followers by source for the #dogs twitter dataset:
+
+-- image for bar chart
+
+From looking at the bar chart, one could surmise that the top source for all of the tweets is the iPhone, followed by Twitter for Android, and then the Twitter Web Client application.  This is no surprise given the ubiquitous nature of smart phones today.
+
+The python code used to generate the bar chart is below:
+
+```python
+dogs['source_new'] = ''
+
+for i in range(len(dogs['source'])):
+    m = re.search('>(.*?)</a', dogs['source'][i])
+    try:
+        dogs['source_new'][i]=m.group(0)
+    except AttributeError:
+        dogs['source_new'][i]=dogs['source'][i]
+        
+dogs['source_new'] = dogs['source_new'].str.replace('', ' ', case=False)
+
+dogs['source_new'].head()
+
+tweets_by_type = dogs.groupby(['source_new'])['favorite_count'].sum()
+plt.title('Number of followers by Source', bbox={'facecolor':'0.8', 'pad':0})
+tweets_by_type.transpose().plot(kind='bar',figsize=(20, 10))
+```
+
+Another effective visualization for analyzing and visualization twitter datasets are wordclouds. Wordclouds depict groupings of words in different sizes depending on how frequently they are displayed within tweets. The Wordcloud python library can be installed using the pip method and imported into the python script with the following commands:
+
+```
+python -m pip install wordcloud
+```
+```python
+from wordcloud import WordCloud, STOPWORDS
+```
+
+Below is the python code to generate two different wordcloud visualizations; one depicting text and another showing language.
+
+```python
+""" Dogs Text Wordcloud"""
+def wordcloud(tweets,col):
+    stopwords = set(stopwds)
+    wordcloud = WordCloud(background_color="white",stopwords=stopwords,random_state = 2016).generate(" ".join([i for i in dogs[col]]))
+    plt.figure( figsize=(20,10), facecolor='k')
+    plt.imshow(wordcloud)
+    plt.axis("off")
+    plt.title("Dog DataSet")
+wordcloud(dogs,'text')
+
+""" Dogs Language Wordcloud"""
+def wordcloud(tweets,col):
+    stopwords = set(stopwds)
+    wordcloud = WordCloud(background_color="white",stopwords=stopwords,random_state = 2016).generate(" ".join([i for i in dogs[col]]))
+    plt.figure( figsize=(20,10), facecolor='k')
+    plt.imshow(wordcloud)
+    plt.axis("off")
+    plt.title("Dog DataSet")
+wordcloud(dogs,'lang')
+```
+
+Below is a wordcloud chart illustrating the top words or phrases seen within the Twitter #dogs dataset. 
+
+-- wordcloud text image
+-- wordcloud language image
+
+The word *dog* is displayed prominently as expected, and there are also some other interesting words such as *love*, *pet*, *first* displayed as well.  There are some other words that were not expected such as *millionaire*, *crypto*, and *trading binance*. This could lead to further research as to how these terms are related to tweets containing the #dog hashtag. 
+
+### Machine Learning Algorithms
+
+The Naive Bayes and Neural Networks algorithms can be set up and executed veru seamlessly in Python using a variety of libraries. Users can import and implement the Naive Bayes and Neural Network algorithms from the sklearn library. Sklearn contains numerous machine learning algorithmic functions and toolkits, and is a manageable task as far as setup and implementation is concerned. After creating the train and test datasets in python with the desired twitter data, setting up and running the algorithm in Python is straightforward. In addition to setting up the algorithm, it is advisable to add in a vectorization component from the sklearn library to incorporate within the algorithm. Vectorization uses feature selection to transform textual information into numerical information that machine learning algorithms such as Naive Bayes and Neural Network can understand and process more efficiently [@www-scikit-learn-feature].
+
+In order to effectively run the algorithms, there are a few model preparation steps needed to be completed. For the cat and dog datasets, the hashtags should be removed and replaced with a filler, non-significant value. 
+
+```python
+cats_txt = [x.replace('#cat',"BLAH") for x in cats['text']]
+dogs_txt = [x.replace('#dog',"BLAH") for x in dogs['text']]
+```
 
 
-## Visualizations
-
--- matplotlib, redash, MongoDB Compass, wordclouds 
 
 ## Results
 
