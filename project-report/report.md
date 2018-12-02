@@ -81,11 +81,21 @@ Next, I installed the latest version of Python, which is version 3.7.1. Python i
 
 Twitter data, when extracted, is in JSON format. JSON (Javascript Object Notation) is a data interchange format that is both easy for humans to read and write, and easy for machines to parse and implement [@www-json-org]. A json object is basically a set of key value pairs ending contained within two braces. This format borrows heavily from the Javascript programming language, hence the Javascript component of the term [[@www-packtpub-com-json]. The format is considered to be structured, as you would expect to see relational data within a table, but it's considered to be thought of as semi-structured which  "..the structure is either flexible or not fully predefined. It is sometimes also referred to as a self-describing structure [@www-packtpub-com-json]." The JSON datatype has proven to be very popular and has garnered wide usages with seb sites due to the effective way in which JSON data can be exchanged between client and server web applications [@www-packtpub-com-json]. Below is sample JSON object: 
 
--- add JSON object image here 
+```json
+{"first name":"Jay", "last name":"Stockwell", "hometown":"Louisville", "hobby": "playing guitar"} 
+```
 
 A json array is essentially a collection of key values contained within two brackets
 
--- add JSON array image here
+```json
+{
+  "first name":"Jay", 
+  "last name":"Stockwell", 
+  "hometown":"Louisville", 
+  "hobby":"playing guitar"
+  "favorite cars":["Porsche","Lamborghini","Jeep"]
+}
+```
 
 Twitter JSON data is comprised of many different components, all of which are used to describe individual tweets. 
 
@@ -430,7 +440,7 @@ The word *dog* is displayed prominently as expected, and there are also some oth
 
 ### Machine Learning Algorithms
 
-The Naive Bayes and Neural Networks algorithms can be set up and executed veru seamlessly in Python using a variety of libraries. Users can import and implement the Naive Bayes and Neural Network algorithms from the sklearn library. Sklearn contains numerous machine learning algorithmic functions and toolkits, and is a manageable task as far as setup and implementation is concerned. After creating the train and test datasets in python with the desired twitter data, setting up and running the algorithm in Python is straightforward. In addition to setting up the algorithm, it is advisable to add in a vectorization component from the sklearn library to incorporate within the algorithm. Vectorization uses feature selection to transform textual information into numerical information that machine learning algorithms such as Naive Bayes and Neural Network can understand and process more efficiently [@www-scikit-learn-feature].
+The Naive Bayes and Neural Networks algorithms can be set up and executed veru seamlessly in Python using a variety of libraries. Users can import and implement the Naive Bayes and Neural Network algorithms from the sklearn library. Sklearn contains numerous machine learning algorithmic functions and toolkits, and is a manageable task as far as setup and implementation is concerned. After creating the train and test datasets in python with the desired twitter data, setting up and running the algorithm in Python is straightforward. 
 
 In order to effectively run the algorithms, there are a few model preparation steps needed to be completed. For the cat and dog datasets, the hashtags should be removed and replaced with a filler, non-significant value. 
 
@@ -439,7 +449,60 @@ cats_txt = [x.replace('#cat',"BLAH") for x in cats['text']]
 dogs_txt = [x.replace('#dog',"BLAH") for x in dogs['text']]
 ```
 
+In addition to setting up the algorithm, it is advisable to add in a vectorization component from the sklearn library to incorporate within the algorithm. The vectorization process is used to transform textual information into numerical information that machine learning algorithms such as Naive Bayes and Neural Network can understand and process more efficiently [@www-scikit-learn-feature]. the stopwords component can also be pulled into play at this step to ensure these elements are excluded from this step. Below is the python code to accomplish this:
 
+```python
+vectorizer = sklearn.feature_extraction.text.CountVectorizer(cats_txt+dogs_txt, analyzer='word', stop_words=stopwds, min_df=5)
+vectorizer.fit(cats_txt+dogs_txt)
+cat_tdm = vectorizer.transform(cats_txt).toarray()
+dog_tdm = vectorizer.transform(dogs_txt).toarray()
+vectorizer.get_feature_names()
+```
+
+The next step would entail combining the arrays into one matrix, and then assigning adding in values the class labels.
+
+```python
+catdog_tdm = numpy.concatenate((cat_tdm,dog_tdm),axis=0)
+Ycat = numpy.array([0 for i in range(len(cats_txt))])
+Ydog = numpy.array([1 for i in range(len(dogs_txt))])
+Y = numpy.concatenate((Ycat,Ydog),axis=0)
+```
+At this point, the data must e split into two distinct data sets; one for training and another to test the algoritm. The training dataset is used by the machine learning algorithm to learn about the the data and its possible outcomes. The test data is used to test the algorithm after it has run through the training phase. Typically the training data set is larger in size.  Below is the python code for splitting data into train and test datasets:
+
+```python
+Xtrain,Xtest,Ytrain,Ytest = sklearn.model_selection.train_test_split(catdog_tdm, Y, test_size=0.2)
+```
+
+In this case, the test data comprised 20% of the dataset while the train data is 80%. 
+
+As mentioned earlier, the Naive Bayes Multinomial algorithm was determined to be one of the more effective algorithms for tweet classification. The python code is below. 
+
+```python
+mnb = sklearn.naive_bayes.MultinomialNB()
+mnb.fit(Xtrain,Ytrain)
+Ypred = nb.predict(Xtest)
+
+print("\nNaive Bayes Performance")
+print_score(Ytest,Ypred)
+metrics.accuracy_score(Ytest, Ypred)
+metrics.confusion_matrix(Ytest,Ypred)
+print(Ytest.value_counts())
+```
+
+The mnb.fit portion of the code above is fitting the data into the Naive Bayes Algorithm, and the nb.predict function is running the algorithm against the test data. There are some accuracy scores generated as well as a confusion matrix to help gauge whether or not the model was fitted properly. 
+
+The Neural Networks algorithm is another algorithm that has been linked to high performance and results when used with Twitter data. The python code is also straightforward in setting up and requires network hidden layers to be defined as well as the iterations. The python code is below:
+
+```python
+nn = sklearn.neural_network.MLPClassifier(hidden_layer_sizes=(30,30,30),max_iter = 500)
+nn.fit(Xtrain,Ytrain)
+Ypred = nn.predict(Xtest)
+
+print("\nNeural Network Performance")
+print_score(Ytest,Ypred)
+metrics.accuracy_score(Ytest, Ypred)
+cm = confusion_matrix(Ytest, Ypred)
+```
 
 ## Results
 
