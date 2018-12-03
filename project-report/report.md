@@ -163,11 +163,15 @@ You can configure tweepy to work in a search or streaming manner. Tweepy has a c
 
 After the script is run, the data can now be inserted into the MongoDB Atlas database. The pymongo library includes an insert function that will allow the user to insert either one record, or many records into the database. In order to use the insert many function, you will need to create a collection database object. A MongoDB collection is essentially a collection of documents, or in relation to Twitter data, a collection of json documents [@www-docs-mongodb-collections]. A collection can be thought of as being similar to a SQL relational table [@www-blog-jlevente-intro]. The collection, if it doesn't already exist, can be created within the insert statement itself. Below are two examples:
 
--- insert sample insert statements
+```python
+# Insert one record only
+db = mydb.insert_one(mydict)
+
+# Insert multiple records
+db = mydb.insert_many(mydict)
+```
 
 The python script can be run multiple time to continously gather tweets. However, it is important that we don't collect the same tweets every time we run the script. Therefore, it is adviseable to create an index object after the initial connection to the MongoDb database and database table. This will ensure that each object is properly indexed and contains a unique ID field. Once the script is run subsequent times, there is an argument in place to check the ID field and ensure that duplicate tweets are not being added. 
-
--- insert sinceID = 1 argument
 
 Twitter Data contained within the MongoDB database can be queried from within Python using specific command line arguments and functions from the pymongo library. The argument findone() will return the very first record in the database and will include every item associated with that record. With Twitter data, the findone() argument will return all of the components of the first tweet collected such as key, timestamp, description, user, etc. If you want to zero in on one specific item within the tweet, you can add some additional information to the findone() argument. For example,if I wanted to see the key of the first tweet, I would add 'key' to the findone() argument as findone.key(). The argument needs to also contain the data collection that we are querying. The full line is below:
 
