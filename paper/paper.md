@@ -14,13 +14,10 @@ Part of Speech tagging, Hadoop
 
 ---
 
-:o: this paper is to short to justify an abstract, please merge into introduction
-
-## Abstract
-
-We examines Natural Language Processing (NLP) and its usage in Big Data, the current challenges facing NLP, and solutions to those challenges using new concepts and applications.  Organizations have recently begun to harness the immense power of big data and how the concept can prove to be a beneficial component.  The term big data used to be a scary term that elicited feelings of consternation and anxiety, but with organizations experiencing exponential growth in data volume, the term has become mainstream and widely accepted.  Big data is largely unstructured text and constantly in a state of enormous flux, which is why NLP offers many opportunities to tap into this vast data resource [@www-expertsystem]. This paper will explore the evolving, and sometimes challenging relationship between NLP and Big Data, the problems that NLP can solve, which applications are leveraged, and how the data can be transformed into a presentable format for consumption. 
 
 ## Introduction
+
+Organizations have recently begun to harness the immense power of big data and how the concept can prove to be a beneficial component.  The term big data used to be a scary term that elicited feelings of consternation and anxiety, but with organizations experiencing exponential growth in data volume, the term has become mainstream and widely accepted.  Big data is largely unstructured text and constantly in a state of enormous flux, which is why NLP offers many opportunities to tap into this vast data resource [@www-expertsystem]. This paper will explore the evolving, and sometimes challenging relationship between NLP and Big Data, the problems that NLP can solve, which applications are leveraged, and how the data can be transformed into a presentable format for consumption. 
 
 Big data “describes the growing volume of structured and unstructured, multi-source information that is too large for traditional applications to handle [@www-expertsystem].”  The volume of today’s data is on an unprecedented growth trajectory due to the ample methods to collect and analyze data. The Internet of Things, mobile devices, sensors, cameras, and software logs are just some examples of non-traditional methods of data collection are contribute to the abundance of information today [@hid-sp18-516-www-wiki-bigdata]. There’s no end in sight to exponential growth that is projected over the next several years.
 
