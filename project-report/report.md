@@ -1,12 +1,4 @@
-# Twitter Text Mining using Python. MongoDB, and Amazon Web Services  - :hand: fa18-523-61
-
-:o: finalize title
-
-:o: refs missing
-
-:o: please remove first person writing style
-
-:o: please remove phrases such as in this paper, in this term paper ...
+# Twitter Text Mining Using Python and MongoDB  - :hand: fa18-523-61
 
 -- Still a draft. Images and references will be inserted/updated soon.
 
@@ -17,12 +9,12 @@
 | github: [:cloud:](https://github.com/cloudmesh-community/fa18-523-61/blob/master/project-report/report.md)
 
 ---
-Keywords: Twitter, Text Mining, Python, MongoDB, Amazon Web Services
+Keywords: Twitter, Text Mining, Python, MongoDB, Amazon Web Services, Tweepy, Naive Bayes, Neural Networks
 ---
 
 ## Abstract
 
-This term paper will provide a thorough analysis, and detailed, informative document pertaining how the Twitter API, in conjunction with Python and MongoDB Atlas can provide an effective solution for collecting and analyzing tweets. The paper's objectives are to provide a thorough understanding pertaining to how the twitter API works, how twitter data is constructed, how Python's tweepy library works to collect data, and how MongoDB Atlas cloud service provides a robust environment to store twitter data for future analysis. The paper will also discuss the implications of using the Twitter app and its data within the realm of Big Data and Natural Language Processing. 
+The paper's objectives are to provide a thorough analysis, and detailed, informative document pertaining how the Twitter API, in conjunction with Python and MongoDB Atlas can provide an effective solution for collecting and analyzing tweets. The paper's objectives are to provide a thorough understanding pertaining to how the twitter API works, how twitter data is constructed, how Python's tweepy library works to collect data, and how MongoDB Atlas cloud service provides a robust environment to store twitter data for future analysis. The paper will also discuss the implications of using the Twitter app and its data within the realm of Big Data and Natural Language Processing. 
 
 
 ## Introduction
@@ -75,7 +67,7 @@ Once tweepy is set up and the user passes through the authentication step, users
 
 The requirements for this project are to run a python script to collect twitter data, specifically tweets with the hashtags #cats and #dogs. Next, is to store the twitter data within a MongoDB database using my local computer and also in the cloud using MongoDB. In order to pull twitter data, users must create a Twitter API account through the Twitter developers website. After creating an account, users wil be provided with four distinct security tokens that users will need in order to connect to the Twitter API through Python. 
 
-Next, I installed the latest version of Python, which is version 3.7.1. Python is an open source general purpose programming language that is very useful for data science projects. There are numerous libraries available to install within Python that will help you accomplish your end goal. For this project, the primary library that I want to use for collecting twitter data is tweepy. Tweepy is designed to handle multiple aspects of twitter tweet collection including authentication, connection, session management, and reading and routing incoming messages [@www-tweepy-io]. 
+Next, users need to install the latest version of Python, which is version 3.7.1. Python is an open source general purpose programming language that is very useful for data science projects. There are numerous libraries available to install within Python that will help you accomplish your end goal. One of the most popular libraries available for working with twitter data in python is tweepy. Tweepy is designed to handle multiple aspects of twitter tweet collection including authentication, connection, session management, and reading and routing incoming messages [@www-tweepy-io]. 
 
 ## Data
 
@@ -106,8 +98,6 @@ Below is an example of a tweet and a description of the content:
 -- insert image of sample json twitter record
 
 The tweets follow a parent-child construction. All tweets contain a user object which can also contain a geo-tagged child object describing the geographic location of where the tweet originated. The tweet also contains an entities object that consists of information such as assigned hashtags, URLs, user mentions, and any sort of media material [@www-developer-twitter]. The data record also contains a flag to indicate if the tweet has been retweeted, or has been forwarded by someone else to another person. A retweet is typically comprised of someone else's comments that a user would like to share.  
-
-For this term paper, I created a Twitter API account and used Python to connect to Twitter directly using a set of credentials that were supplied to me. Using a python script, I created two sets of data; one for tweets that contained the hashtag #dog and a second dataset that contained tweets with the hashtag #c .at. After the data is pulled, the json data is converted into dataframes using the pandas package. 
 
 ## Twitter Cloud Storage
 
@@ -210,11 +200,11 @@ Neural networks are popular in natural language classification tasks because of 
 
 ## Running a Twitter Script in Python
 
-As mentioned earlier, one of my objectives of this paper is to examine how a basic python scrip is setup and implemented using using data mined from Twitter. The scenario is to design a script that pulls tweets with the hashtags #cats and #dogs. Working with these hashtags, I wanted to generate a simple script that can be used to classify if a person is a cat or dog person based on their tweets. I wanted to evaluate the performance and accuracy of the two classification algorithms used, as well as evaluate any issues and challenges that arose during my experiment.  
+There are multiple ways that users can set up python and perform some basic text mining against Twitter. The scenario is to design a script that pulls tweets with the hashtags #cats and #dogs. Working with these hashtags, Using python, users can generate a simple script that can be used to classify if a person is a cat or dog person based on their tweets. Users evaluate the performance and accuracy of the two classification algorithms used, as well as evaluate any issues and challenges that arose during their analysis.  
 
 ### Python Libraries
 
-Below is the full list of libraries that I imported:
+Below is a sample list of python libraries that can be used for twitter analysis:
 
 ```python
     import tweepy
@@ -244,7 +234,7 @@ Below is the full list of libraries that I imported:
     import seaborn as sns
 ```
 
-From the sklearn library, I created a function to gauge the precision scores from the two algorithms that will be used later in the script. The precision scores will help me assess whether a record was classified incorrectly, for example a record that is labeled a positive when it should have been labeled negative [@www- scikit-learn-ps].
+From the sklearn library, users can create a function to gauge the precision scores from the two algorithms that will be used later in the script. The precision scores will help assess whether a record was classified incorrectly, for example a record that is labeled a positive when it should have been labeled negative [@www- scikit-learn-ps].
 
 ```python
     def print_score(Ytrue,Ypred):
@@ -273,7 +263,7 @@ The next step in the code is authentication with the Twitter API. The concepts b
         print ("Can't Authenticate")
         sys.exit(-1)
 ```        
- Now that I'm authenticated, I can specify my search criteria for the specific tweets I want to identify and collect. A variable called 'SearchQuery' contains the #cats hashtag that I want to search on, the maxTweets variable contains the maximum number of tweets that I would like to collect, the 'tweetsperQry' is set to 100 as this is the maximum amount of tweets the Tweepy API is allow to gather during one iteration using the search function of the API. The 'fname' contains the name of the file in which the tweets will be collected.     
+ Now that the user is authenticated, they can specify the search criteria for the specific tweets needed for identification and collection. A variable called 'SearchQuery' contains the #cats hashtag that users may want to search on, the maxTweets variable contains the maximum number of tweets to be collected, the 'tweetsperQry' is set to 100 as this is the maximum amount of tweets the Tweepy API is allow to gather during one iteration using the search function of the API. The 'fname' contains the name of the file in which the tweets will be collected.     
 
 ```python
 """Information about the type of tweets we want to find as well as how many"""
@@ -323,7 +313,7 @@ Since the Tweepy API only allows 100 tweets per iteration, the script contains a
     print ("Downloaded {0} tweets, Saved to {1}".format(tweetCount, fName))
 ```
 
-The iteration loop has completed, and I've created two dataset that contains data for the hashtags of #cats and #dogs. For this paper, I found that working with twitter data that was contained in dataframes was easier to analyze. I used the pandas dataframe function to take the twitter data from the iteration script and load into two separate dataframes.
+The iteration loop has completed, and two sample two datasets were created that contains data for the hashtags of #cats and #dogs. Working with twitter data that was contained in dataframes was easier to analyze. The pandas dataframe function was used to take the twitter data from the iteration script and load into two separate dataframes.
 
 ```python
 dogs = pd.read_json("C:/Users/Jay/PycharmProjects/ADS_Assignments/FinalExercise/dog_tweets.txt",lines=True)
@@ -331,7 +321,8 @@ cats = pd.read_json("C:/Users/Jay/PycharmProjects/ADS_Assignments/FinalExercise/
 ```
 A crucial step when working on a new set of data is to perform some type of data preprocessing and exploration.  This gives you a good sense of that data contents, and if you need to perform some cleansing of the data such as removing null values and incorrect characters or words. 
 
-In this example, the first two lines provide a record count. Next, using the dogs dataset, I created a new column entitled tweety and extracted all the URLs and usernames from the collected tweets into that new column. I decided to remove all URLS, RT's (retweets), and usernames or twitter handles. 
+The first two lines provide a record count. Next, using the dogs dataset, a new column was created entitled tweety and extracted all the URLs and usernames from the collected tweets into that new column. All of the URLS, RT's (retweets), and usernames or twitter handles w ere removed. 
+
 ```python
 dogs['tweety'] = '' 
 
@@ -353,7 +344,6 @@ for i in range(len(dogs['text'])):
                                 if 'http' not in word and '@' not in word and '<' not in word])
 dogs['followers_count'][1]
 ```
-I performed the aforementioned step again with the #cats dataset. 
 
 Within Natural Language Processing, there are textual components that do not provide any significance to the analysis. These are referred to as stopwords. Some examples of stopwords are *is*, *the*, and *is*. Stopwords should be removed during the processing step to eliminate unnecessary information from being included in the analysis [@www-xpo6-com].  The nltk python library has contains a corpus library of which contains a comprehensive list of stopwords. 
 
@@ -476,7 +466,6 @@ At this point, the data must e split into two distinct data sets; one for traini
 ```python
 Xtrain,Xtest,Ytrain,Ytest = sklearn.model_selection.train_test_split(catdog_tdm, Y, test_size=0.2)
 ```
-
 In this case, the test data comprised 20% of the dataset while the train data is 80%. 
 
 As mentioned earlier, the Naive Bayes Multinomial algorithm was determined to be one of the more effective algorithms for tweet classification. The python code is below. 
@@ -508,15 +497,16 @@ metrics.accuracy_score(Ytest, Ypred)
 cm = confusion_matrix(Ytest, Ypred)
 ```
 
-## Results
-
-| Tables | are    | cool |
-| ------ |:------:|-----:|
-| Col 3  | right  |$1600 |
-
 ## Conclusion
 
+In conclusion, using python to extract and analyze twitter data appears to be an effective tool that can accomplish an emormous amount of tasks. Python's powerful collection of libraries and tools really make a difference in regards to how users can gather results to accomplish their objectives. Python appears to be extremely flexible in allowing many different variables and options to be set. Regarding twitter data, Tweepy appears to be a very fluid and straightfoward tool to setup and program. Creating a twitter api account and setting up the authentication in Python is also very uncomplicated. One caveat in terms of searching for actual tweets is that the number of tweets returned when using the tweepy package is set to 100. Users that want to return more than 100 tweets in their results may need to add in some additional programming to create a iterative loop function in order to get the desired number of tweets. This can add a level to complexity to the script. 
+
+Storing twitter data in the MongoDB Atlas cloud storage system can be an effective solution. Setting up a MongoDB Atlas account is effortless as well as starting up and managing a new cluster. The free tier is offered at no cost and includes up to 512 MB, however, this may inefficient for some, if not most, users who are working with twitter data. In order to perform an effective analysis, large amounts of data is required, and the free tier will probably not meet those requirements.  MongoDB Atlas does offer services at higher pricing tiers that include both scalable RAM and scalable storage. These options may prove to be attractive for enterprise level entities.  MongoDb Atlas has shown some issues at the data level pertaining to duplicate records being captured, however, those issues can be alleviated within Python by including some code that ensures that the ID fields of the tweets are unique. 
+
+
 ## Future Research
+
+Collecting social media for sentiment analysis is another area of interesting research that has arisen. Sentiment analyze can provide data on a more subjective level, as opposed to objective such as what is provided here.  Many new questions arise such as how can using NLP to determine the state or emotion that a certain tweet is conveying, can this be accomplished in python somewhat efficiently, and what are the specific uses for this data. 
 
 ## Acknowledgements
 
