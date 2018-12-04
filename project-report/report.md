@@ -422,10 +422,12 @@ wordcloud(dogs,'lang')
 
 Below are two wordcloud charts; one illustrating the top words or phrases seen within the Twitter #dogs dataset, and another illustrating the top languages.
 
--- wordcloud text
--- wordcloud language image
+![Text Wordcloud](images/fa18_523_61_wordcloud_text.png){fig4:TextWordcloudPlot}
 
-The word *dog* is displayed prominently as expected, and there are also some other interesting words such as *love*, *pet*, *first* displayed as well.  There are some other words that were not expected such as *millionaire*, *crypto*, and *trading binance*. This could lead to further research as to how these terms are related to tweets containing the #dog hashtag. The Language 
+
+![Language Wordcloud](images/fa18_523_61_wordcloud_lang.png){fig5:LanguageWordcloudPlot}
+
+The word *dog* is displayed prominently as expected, and there are also some other interesting words such as *love*, *pet*, *first* displayed as well.  There are some other words that were not expected such as *millionaire*, *crypto*, and *trading binance*. This could lead to further research as to how these terms are related to tweets containing the #dog hashtag. The Language wordcloud illustrates that the majority of the tweets are in the English and Japanese language. 
 
 ### Machine Learning Algorithms
 
