@@ -101,11 +101,13 @@ The tweets follow a parent-child construction. All tweets contain a user object 
 
 ## Twitter Cloud Storage
 
-There are many options available today to store twitter data within a cloud storage platform. Cloud storage consists of storing data within logical pools that can span multiple servers and multiple locations throughout many locations [@www-en-wikipedia-cloud]. Cloud services can be accessed through a dedicated cloud service platform, and website APIs such as cloud desktop storage and gateways. [@www-en-wikipedia-cloud].  Some of the main players in today's cloud computing market are Amazon Web Services, Microsoft Azure, and Google iCloud. The focus of this paper will be on the Amazon Web Services platform. 
+There are many options available today to store twitter data within a cloud storage platform. Cloud storage consists of storing data within logical pools that can span multiple servers and multiple locations throughout many locations [@www-en-wikipedia-cloud]. Cloud services can be accessed through a dedicated cloud service platform, and website APIs such as cloud desktop storage and gateways. [@www-en-wikipedia-cloud].  Some of the main players in today's cloud computing market are Amazon Web Services, Microsoft Azure, and Google iCloud. 
 
 Amazon Web Services (AWS) provides a portfolio of services that can help organizations deal with the voluminous amounts of data that's available in Twitter. AWS provides a cloud storage service called S3 which is capable of storing data of any type from a variety of sources including web sites, mobile apps, and even IoT sensors [@www-aws-amazon-s3]. Used in conjunction with Amazon Glacier, and Amazon Glue, one could build a secure data lake in the cloud that could be set up to contain streaming twitter data. Once the data is in the data lake, one can take advantage of cutting-edge advanced machine learning and analytics capabilities available through additional Amazon services such as AWS Athena (Interactive analytics), AWS Kinesis (Real-Time Analytics), and AWS Sagemaker and Deep Learning AMIs
 [@www-aws-amazon-s3].
 
+
+![AWS S3 Data Lake [@www-aws-amazon-s3]](images/fa18_523_16_AWS_DataLake.png){#fig:AWS S3 DataLake}
 
 
 A lot of organizations today leverage the power and scalability of the S3 platform and come to rely on the system for its day-to-day data needs. That reliability was tested during an S3 outage that occurred on February 27th, 2017 that effected Amazon's entire US-EAST-1 region. This outage caused widespread website outages and vast disruptions to Amazon's clients. The issue was caused by an Amazon employee typing an incorrect command which caused several key subsystems to go offline [@www-theverge-s3]. This was an embarassing incident for Amazon that just goes to show how important cloud services have become in recent years.  
@@ -147,7 +149,11 @@ from dnspython import resolver
 
 Once fully connected to MongoDB, you begin to 'listen' or search for tweets that contain a specific word, phrase, user, #hashtag, or any other piece of information that you're interested in mining for. There's a couple of ways to set up the search criteria, but typically a variable is created that contains the search words such as listed below:
 
--- insert code samples for setting up variables, search words, count, periods.
+```python
+count = 50
+q="cats"
+search_results=api.search.tweets(count=count,q=q)
+```
 
 You can configure tweepy to work in a search or streaming manner. Tweepy has a class entitled StreamListener that will access the Twitter API and pull all tweets are created using the specified criteria [@www-pythondata-twitter]. Once executed, the script will continue streaming until the script is stopped. The api.search method will provide a collection of tweets based upon a count variable specified earlier. One thing of note is the Tweepy will only return 100 tweets at a time, so the script will need to contain an iterative loop function to run continuously until the value specified in the count variable is met. 
 
@@ -163,17 +169,13 @@ db = mydb.insert_many(mydict)
 
 The python script can be run multiple time to continously gather tweets. However, it is important that we don't collect the same tweets every time we run the script. Therefore, it is adviseable to create an index object after the initial connection to the MongoDb database and database table. This will ensure that each object is properly indexed and contains a unique ID field. Once the script is run subsequent times, there is an argument in place to check the ID field and ensure that duplicate tweets are not being added. 
 
-Twitter Data contained within the MongoDB database can be queried from within Python using specific command line arguments and functions from the pymongo library. The argument findone() will return the very first record in the database and will include every item associated with that record. With Twitter data, the findone() argument will return all of the components of the first tweet collected such as key, timestamp, description, user, etc. If you want to zero in on one specific item within the tweet, you can add some additional information to the findone() argument. For example,if I wanted to see the key of the first tweet, I would add 'key' to the findone() argument as findone.key(). The argument needs to also contain the data collection that we are querying. The full line is below:
-
--- insert findone command image.
+Twitter Data contained within the MongoDB database can be queried from within Python using specific command line arguments and functions from the pymongo library. The argument findone() will return the very first record in the database and will include every item associated with that record. With Twitter data, the findone() argument will return all of the components of the first tweet collected such as key, timestamp, description, user, etc. If you want to zero in on one specific item within the tweet, you can add some additional information to the findone() argument. For example,if I wanted to see the key of the first tweet, I would add 'key' to the findone() argument as findone.key(). The argument needs to also contain the data collection that we are querying. 
 
 To return all of the records in the database, a cursor object must be created in the python script that will allow the user to read and analyze all of the records within the collection [@www-blog-jlevente]. A cursor can be created by setting up a find() argument within a collection. You can also limit the results by including a limit argument set to the desired number of records. 
 
--- insert image of find() command with limit argument.
-
 MongoDB Atlas was designed to handle large datasets by spreading the data among many servers with the cloud computing platform [@www-mongodb-bigdata]. MongoDB can also be connected to a Hadoop instance to deal with the upcoming challenges that are presented by Big Data. This creates an ideal environment to house streaming Twitter data as MongoDB is perfect for document data types such as JSON. MongoDB is also thought of as being a great platform for working with Big Data because of the high scalability offered by MongoDB [@www-blog-jlevente-intro]. However, there have been some points of contention that have arisen with NoSQL databases such as MongoDB. Some users that have used MongoDb to store twitter data have reported issues related to duplicate data, which was addressed earlier with the creation of an index. Another issue is that because of the structure of Twitter data and the document storage type, it is very hard, if not impossible to do SQL style joins within the data [@www-sarahmei-com]. Social media data is highly unstructured, and individuals that are accustomed to working with relational SQL based databases may find this type of document styled data very hard to understand, analyze, and construct effective queries against. 
 
-Conversely, querying and analyzing twitter data in python is an compelling and direct way to open many new doors to insights. 
+Conversely, querying and analyzing twitter data in python is a compelling and direct way to open many new doors to insights. 
 
 
 ## Data Science Algorithms for Twitter Data
@@ -184,17 +186,13 @@ The Naïve Bayes classification method is based on Bayes Theorem probability the
 
 Below is the mathematical formula that comprises the algorithm. The formula follows the Bayes Rule of Probability:
 
--- insert image of mathematical formula
-
--- insert information about what the variables mean
-
-
+![Bayes Rule of Probability [@www-analyticsvidhaya-nb]](images/fa18_523_61_Bayes_Rule.png){#fig:BayesRuleofProbability}
 
 The foundation of the formula is that it calculates the posterior probability P(c|x) from the other variables in the equation, P(c), P(x), and P(x|c) [@www-analyticsvidhaya-nb].
 
 The Naive Bayes classification method has gained popularity recently with usage as an effective spam filter, text analysis, and medical diagnosis tool.  I wanted to utilize the multinomial Naïve Bayes model as it appears to be more suitable for text classification by explicitly modeling the word counts and makes adjustments to any underlying calculations involved. 
 
-The second algorithm I wanted to experiment with is Neural Networks. Neural networks function as an information processing model that closely mirrors how biological nervous systems , specifically neurons, process information [@www-doc-ic-ac-uk]. Neural networks make predictions by learning the relationships between your data features and other previous observations. This approach works by feeding data into an input layer that goes through a series of transformations within hidden layers until a final transformation occurs and a final output is produced. Deep neural networks go a step further due to the larger number of nodes or layers that the data passes through in a complex, multi-step process of pattern and correlation recognition [@www-skymind.ai].  Working with more layers provides more opportunities for the data to train on the features abd patterns recognized in the previous layer, which in turn produces a more and more complex hierarchy know as a feature hierarchy [@www-skymind.ai]. 
+Another popular algorithm to use with Twitter data is neural networks. Neural networks function as an information processing model that closely mirrors how biological nervous systems , specifically neurons, process information [@www-doc-ic-ac-uk]. Neural networks make predictions by learning the relationships between your data features and other previous observations. This approach works by feeding data into an input layer that goes through a series of transformations within hidden layers until a final transformation occurs and a final output is produced. Deep neural networks go a step further due to the larger number of nodes or layers that the data passes through in a complex, multi-step process of pattern and correlation recognition [@www-skymind.ai].  Working with more layers provides more opportunities for the data to train on the features abd patterns recognized in the previous layer, which in turn produces a more and more complex hierarchy know as a feature hierarchy [@www-skymind.ai]. 
 
 Neural networks are popular in natural language classification tasks because of the ability for neural networks to create an embedded layer. Through vectorization, the words in the embedded layer become mathematical arrays. These vectors can be very useful in text classification. Deep neural networks, due to their extensive feature training, have gained traction with sentiment analysis in recent years due to the improvements with deep learning models and how they can handle increasing levels of complexity with very large data sets [@www-researchgate.net]. The feature generation aspect of the deep neural network process is also what makes this algorithm very flexible and adaptable to various datasets [@www-researchgate.net]. 
 
@@ -274,6 +272,7 @@ fName = 'cat_tweets.txt' # We'll store the tweets in a text file.
 ```
 
 Since the Tweepy API only allows 100 tweets per iteration, the script contains a functions that runs in a loop until the maxTweets value has been reached. If any issues arise, the function will terminate.
+
 ```python
     SinceID = None
     max_id = 1
@@ -316,8 +315,8 @@ Since the Tweepy API only allows 100 tweets per iteration, the script contains a
 The iteration loop has completed, and two sample two datasets were created that contains data for the hashtags of #cats and #dogs. Working with twitter data that was contained in dataframes was easier to analyze. The pandas dataframe function was used to take the twitter data from the iteration script and load into two separate dataframes.
 
 ```python
-dogs = pd.read_json("C:/Users/Jay/PycharmProjects/ADS_Assignments/FinalExercise/dog_tweets.txt",lines=True)
-cats = pd.read_json("C:/Users/Jay/PycharmProjects/ADS_Assignments/FinalExercise/cat_tweets.txt",lines=True)
+dogs = pd.read_json("C:/Users/sample/dog_tweets.txt",lines=True)
+cats = pd.read_json("C:/Users/sample/cat_tweets.txt",lines=True)
 ```
 A crucial step when working on a new set of data is to perform some type of data preprocessing and exploration.  This gives you a good sense of that data contents, and if you need to perform some cleansing of the data such as removing null values and incorrect characters or words. 
 
@@ -367,7 +366,7 @@ import matplotlib.pyplot as plt
 
 Matplotlib contains a tool called pyplot which allows for very simple plotting as well as creating bar charts, line charts, and histograms. The pyplot tool can be utilized to create line and bar charts to show the distribution of twitter users by source. Below is a bar graph depicting the number of followers by source for the #dogs twitter dataset:
 
--- image for bar chart
+![Twitter Source Bar Chart](images/fa18_523_61_twitter_followers.png){#fig:TwitterSourceBarChart}
 
 From looking at the bar chart, one could surmise that the top source for all of the tweets is the iPhone, followed by Twitter for Android, and then the Twitter Web Client application.  This is no surprise given the ubiquitous nature of smart phones today.
 
@@ -425,12 +424,12 @@ def wordcloud(tweets,col):
 wordcloud(dogs,'lang')
 ```
 
-Below is a wordcloud chart illustrating the top words or phrases seen within the Twitter #dogs dataset. 
+Below are two wordcloud charts; one illustrating the top words or phrases seen within the Twitter #dogs dataset, and another illustrating the top languages.
 
--- wordcloud text image
+-- wordcloud text
 -- wordcloud language image
 
-The word *dog* is displayed prominently as expected, and there are also some other interesting words such as *love*, *pet*, *first* displayed as well.  There are some other words that were not expected such as *millionaire*, *crypto*, and *trading binance*. This could lead to further research as to how these terms are related to tweets containing the #dog hashtag. 
+The word *dog* is displayed prominently as expected, and there are also some other interesting words such as *love*, *pet*, *first* displayed as well.  There are some other words that were not expected such as *millionaire*, *crypto*, and *trading binance*. This could lead to further research as to how these terms are related to tweets containing the #dog hashtag. The Language 
 
 ### Machine Learning Algorithms
 
