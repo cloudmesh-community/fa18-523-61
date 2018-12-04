@@ -103,7 +103,7 @@ Amazon Web Services (AWS) provides a portfolio of services that can help organiz
 [@www-aws-amazon-s3].
 
 
-![AWS S3 Data Lake [@www-aws-amazon-s3]](images/fa18_523_61_AWS_DataLake.png){fig1:AWSS3DataLake}
+![AWS S3 Data Lake [@www-aws-amazon-s3]](images/fa18_523_61_AWS_DataLake.png){#fig:AWSS3DataLake}
 
 
 A lot of organizations today leverage the power and scalability of the S3 platform and come to rely on the system for its day-to-day data needs. That reliability was tested during an S3 outage that occurred on February 27th, 2017 that effected Amazon's entire US-EAST-1 region. This outage caused widespread website outages and vast disruptions to Amazon's clients. The issue was caused by an Amazon employee typing an incorrect command which caused several key subsystems to go offline [@www-theverge-s3]. This was an embarassing incident for Amazon that just goes to show how important cloud services have become in recent years.  
@@ -182,7 +182,7 @@ The Naïve Bayes classification method is based on Bayes Theorem probability the
 
 Below is the mathematical formula that comprises the algorithm. The formula follows the Bayes Rule of Probability:
 
-![Bayes Rule of Probability [@www-analyticsvidhaya-nb]](images/fa18_523_61_Bayes_Rule.png){fig2:BayesRuleofProbability}
+![Bayes Rule of Probability [@www-analyticsvidhaya-nb]](images/fa18_523_61_Bayes_Rule.png){#fig:BayesRuleofProbability}
 
 The foundation of the formula is that it calculates the posterior probability P(c|x) from the other variables in the equation, P(c), P(x), and P(x|c) [@www-analyticsvidhaya-nb].
 
@@ -362,7 +362,7 @@ import matplotlib.pyplot as plt
 
 Matplotlib contains a tool called pyplot which allows for very simple plotting as well as creating bar charts, line charts, and histograms. The pyplot tool can be utilized to create line and bar charts to show the distribution of twitter users by source. Below is a bar graph depicting the number of followers by source for the #dogs twitter dataset:
 
-![Twitter Source Bar Chart](images/fa18_523_61_twitter_followers.png){#fig3:TwitterSourceBarChart}
+![Twitter Source Bar Chart](images/fa18_523_61_twitter_followers.png){#fig:TwitterSourceBarChart}
 
 From looking at the bar chart, one could surmise that the top source for all of the tweets is the iPhone, followed by Twitter for Android, and then the Twitter Web Client application.  This is no surprise given the ubiquitous nature of smart phones today.
 
@@ -422,10 +422,10 @@ wordcloud(dogs,'lang')
 
 Below are two wordcloud charts; one illustrating the top words or phrases seen within the Twitter #dogs dataset, and another illustrating the top languages.
 
-![Text Wordcloud](images/fa18_523_61_wordcloud_text.png){fig4:TextWordcloudPlot}
+![Text Wordcloud](images/fa18_523_61_wordcloud_text.png){#fig:TextWordcloudPlot}
 
 
-![Language Wordcloud](images/fa18_523_61_wordcloud_lang.png){fig5:LanguageWordcloudPlot}
+![Language Wordcloud](images/fa18_523_61_wordcloud_lang.png){#fig:LanguageWordcloudPlot}
 
 The word *dog* is displayed prominently as expected, and there are also some other interesting words such as *love*, *pet*, *first* displayed as well.  There are some other words that were not expected such as *millionaire*, *crypto*, and *trading binance*. This could lead to further research as to how these terms are related to tweets containing the #dog hashtag. The Language wordcloud illustrates that the majority of the tweets are in the English and Japanese language. 
 
