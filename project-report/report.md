@@ -441,7 +441,8 @@ dogs_txt = [x.replace('#dog',"BLAH") for x in dogs['text']]
 In addition to setting up the algorithm, it is advisable to add in a vectorization component from the sklearn library to incorporate within the algorithm. The vectorization process is used to transform textual information into numerical information that machine learning algorithms such as Naive Bayes and Neural Network can understand and process more efficiently [@www-scikit-learn-feature]. the stopwords component can also be pulled into play at this step to ensure these elements are excluded from this step. Below is the python code to accomplish this:
 
 ```python
-vectorizer = sklearn.feature_extraction.text.CountVectorizer(cats_txt+dogs_txt, analyzer='word', stop_words=stopwds, min_df=5)
+vectorizer = sklearn.feature_extraction.text.CountVectorizer(cats_txt+dogs_txt, analyzer='word', 
+             stop_words=stopwds, min_df=5)
 vectorizer.fit(cats_txt+dogs_txt)
 cat_tdm = vectorizer.transform(cats_txt).toarray()
 dog_tdm = vectorizer.transform(dogs_txt).toarray()
