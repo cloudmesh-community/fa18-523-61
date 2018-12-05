@@ -400,7 +400,8 @@ Below is the python code to generate two different wordcloud visualizations; one
 """ Dogs Text Wordcloud"""
 def wordcloud(tweets,col):
     stopwords = set(stopwds)
-    wordcloud = WordCloud(background_color="white",stopwords=stopwords,random_state = 2016).generate(" ".join([i for i in dogs[col]]))
+    wordcloud = WordCloud(background_color="white",stopwords=stopwords,random_state = 2016).
+                generate(" ".join([i for i in dogs[col]]))
     plt.figure( figsize=(20,10), facecolor='k')
     plt.imshow(wordcloud)
     plt.axis("off")
@@ -410,7 +411,8 @@ wordcloud(dogs,'text')
 """ Dogs Language Wordcloud"""
 def wordcloud(tweets,col):
     stopwords = set(stopwds)
-    wordcloud = WordCloud(background_color="white",stopwords=stopwords,random_state = 2016).generate(" ".join([i for i in dogs[col]]))
+    wordcloud = WordCloud(background_color="white",stopwords=stopwords,random_state = 2016).
+                generate(" ".join([i for i in dogs[col]]))
     plt.figure( figsize=(20,10), facecolor='k')
     plt.imshow(wordcloud)
     plt.axis("off")
