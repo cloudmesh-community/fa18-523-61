@@ -16,7 +16,7 @@ paper:
     title: Natural Language Processing as related to Big Data
     url: https://github.com/cloudmesh-community/fa18-523-61/blob/master/paper/paper.md
 project:
-  - keyword: Text Mining
-    title: TBD
+  - keyword: Twitter, Python, MongoDB, 
+    title: Twitter Text Mining with Python and MongoDB
     url: https://github.com/cloudmesh-community/fa18-523-61/blob/master/project-report/report.md
-    code: TBD
+    code: N/A
