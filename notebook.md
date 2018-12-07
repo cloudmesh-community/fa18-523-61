@@ -87,3 +87,10 @@
 * Changed focus of project paper to that of a term paper.
 * Continued research on MongoDB Atlas, Twitter and Big Data, and Twitter and Python
 * Continued adding new material to term paper draft.
+
+## Week of 11/30/2018 - 12/6/2018
+
+* Added final material term paper
+* Added images, charts, and python code to term paper
+* Worked on final editing and proofreading.
+* Added all remaining bibtex entries
