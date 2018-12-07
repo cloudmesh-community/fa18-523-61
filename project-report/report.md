@@ -225,7 +225,7 @@ Below is a sample list of python libraries that can be used for twitter analysis
     import seaborn as sns
 ```
 
-From the sklearn library, users can create a function to gauge the precision scores from the two algorithms that will be used later in the script. The precision scores will help assess whether a record was classified incorrectly, for example a record that is labeled a positive when it should have been labeled negative [@www- scikit-learn-ps].
+From the sklearn library, users can create a function to gauge the precision scores from the two algorithms that will be used later in the script. The precision scores will help assess whether a record was classified incorrectly, for example a record that is labeled a positive when it should have been labeled negative [@www-scikit-learn-ps].
 
 ```python
     def print_score(Ytrue,Ypred):
