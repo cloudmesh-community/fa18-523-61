@@ -1,4 +1,4 @@
-# Twitter Text Mining with Python and MongoDB  - :hand: fa18-523-61
+# Twitter Text Mining with Python and MongoDB  - :smiley: fa18-523-61
 
 
 | Jay Stockwell
