@@ -1,4 +1,4 @@
-# Natural Language Applications and Challenges within Big Data :wave: fa18-523-61
+# Natural Language Applications and Challenges within Big Data
 
 | Jay Stockwell
 | jaystock@iu.edu
